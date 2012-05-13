@@ -16,9 +16,7 @@ class NaftaCommodityDetail
     protected $_name = 'NaftaCommodityDetail';
 
     /**
-     * 
-                Defined by NAFTA regulations.
-              
+     * Defined by NAFTA regulations.
      *
      * @param NaftaPreferenceCriterionCode $PreferenceCriterion
      * return NaftaCommodityDetail
@@ -30,9 +28,7 @@ class NaftaCommodityDetail
     }
     
     /**
-     * 
-                Defined by NAFTA regulations.
-              
+     * Defined by NAFTA regulations.
      *
      * @param NaftaProducerDeterminationCode $ProducerDetermination
      * return NaftaCommodityDetail
@@ -44,10 +40,7 @@ class NaftaCommodityDetail
     }
     
     /**
-     * 
-                Identification of which producer is associated with this commodity (if multiple
-                producers are used in a single shipment).
-              
+     * Identification of which producer is associated with this commodity (if multiple producers are used in a single shipment).
      *
      * @param string $ProducerId
      * return NaftaCommodityDetail
@@ -71,9 +64,7 @@ class NaftaCommodityDetail
     }
     
     /**
-     * 
-                Date range over which RVC net cost was calculated.
-              
+     * Date range over which RVC net cost was calculated.
      *
      * @param DateRange $NetCostDateRange
      * return NaftaCommodityDetail

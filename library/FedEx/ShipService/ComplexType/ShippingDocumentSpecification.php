@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Description of shipping documents
+ * Contains all data required for additional (non-label) shipping documents to be produced in conjunction with a specific shipment.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class ShippingDocumentSpecification
     protected $_name = 'ShippingDocumentSpecification';
 
     /**
-     * Specify type of documents
+     * Indicates the types of shipping documents requested by the shipper.
      *
      * @param array[RequestedShippingDocumentType] $ShippingDocumentTypes
      * return ShippingDocumentSpecification
@@ -28,12 +28,36 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * Specifies the production of each package-level custom document (the same specification is used for all packages).
+     * 
      *
-     * @param CustomDocumentDetail $CustomPackageDocumentDetail
+     * @param CertificateOfOriginDetail $CertificateOfOrigin
      * return ShippingDocumentSpecification
      */
-    public function setCustomPackageDocumentDetail(CustomDocumentDetail $customPackageDocumentDetail)
+    public function setCertificateOfOrigin(CertificateOfOriginDetail $certificateOfOrigin)
+    {
+        $this->CertificateOfOrigin = $certificateOfOrigin;
+        return $this;
+    }
+    
+    /**
+     * 
+     *
+     * @param CommercialInvoiceDetail $CommercialInvoiceDetail
+     * return ShippingDocumentSpecification
+     */
+    public function setCommercialInvoiceDetail(CommercialInvoiceDetail $commercialInvoiceDetail)
+    {
+        $this->CommercialInvoiceDetail = $commercialInvoiceDetail;
+        return $this;
+    }
+    
+    /**
+     * Specifies the production of each package-level custom document (the same specification is used for all packages).
+     *
+     * @param array[CustomDocumentDetail] $CustomPackageDocumentDetail
+     * return ShippingDocumentSpecification
+     */
+    public function setCustomPackageDocumentDetail(array $customPackageDocumentDetail)
     {
         $this->CustomPackageDocumentDetail = $customPackageDocumentDetail;
         return $this;
@@ -42,36 +66,12 @@ class ShippingDocumentSpecification
     /**
      * Specifies the production of a shipment-level custom document.
      *
-     * @param CustomDocumentDetail $CustomShipmentDocumentDetail
+     * @param array[CustomDocumentDetail] $CustomShipmentDocumentDetail
      * return ShippingDocumentSpecification
      */
-    public function setCustomShipmentDocumentDetail(CustomDocumentDetail $customShipmentDocumentDetail)
+    public function setCustomShipmentDocumentDetail(array $customShipmentDocumentDetail)
     {
         $this->CustomShipmentDocumentDetail = $customShipmentDocumentDetail;
-        return $this;
-    }
-    
-    /**
-     * ?
-     *
-     * @param NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
-     * return ShippingDocumentSpecification
-     */
-    public function setNaftaCertificateOfOriginDetail(NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail)
-    {
-        $this->NaftaCertificateOfOriginDetail = $naftaCertificateOfOriginDetail;
-        return $this;
-    }
-    
-    /**
-     * ?
-     *
-     * @param CommercialInvoiceDetail $CommercialInvoiceDetail
-     * return ShippingDocumentSpecification
-     */
-    public function setCommercialInvoiceDetail(CommercialInvoiceDetail $commercialInvoiceDetail)
-    {
-        $this->CommercialInvoiceDetail = $commercialInvoiceDetail;
         return $this;
     }
     
@@ -88,19 +88,19 @@ class ShippingDocumentSpecification
     }
     
     /**
-     * ?
+     * 
      *
-     * @param CertificateOfOriginDetail $CertificateOfOrigin
+     * @param NaftaCertificateOfOriginDetail $NaftaCertificateOfOriginDetail
      * return ShippingDocumentSpecification
      */
-    public function setCertificateOfOrigin(CertificateOfOriginDetail $certificateOfOrigin)
+    public function setNaftaCertificateOfOriginDetail(NaftaCertificateOfOriginDetail $naftaCertificateOfOriginDetail)
     {
-        $this->CertificateOfOrigin = $certificateOfOrigin;
+        $this->NaftaCertificateOfOriginDetail = $naftaCertificateOfOriginDetail;
         return $this;
     }
     
     /**
-     * Specifies the production of the OP-900 document for hazardous materials.
+     * Specifies the production of the OP-900 document for hazardous materials packages.
      *
      * @param Op900Detail $Op900Detail
      * return ShippingDocumentSpecification
@@ -108,6 +108,18 @@ class ShippingDocumentSpecification
     public function setOp900Detail(Op900Detail $op900Detail)
     {
         $this->Op900Detail = $op900Detail;
+        return $this;
+    }
+    
+    /**
+     * Specifies the production of the OP-900 document for hazardous materials.
+     *
+     * @param FreightAddressLabelDetail $FreightAddressLabelDetail
+     * return ShippingDocumentSpecification
+     */
+    public function setFreightAddressLabelDetail(FreightAddressLabelDetail $freightAddressLabelDetail)
+    {
+        $this->FreightAddressLabelDetail = $freightAddressLabelDetail;
         return $this;
     }
     

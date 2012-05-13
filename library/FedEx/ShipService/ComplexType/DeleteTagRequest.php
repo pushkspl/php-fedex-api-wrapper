@@ -16,7 +16,7 @@ class DeleteTagRequest
     protected $_name = 'DeleteTagRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return DeleteTagRequest
@@ -64,7 +64,7 @@ class DeleteTagRequest
     }
     
     /**
-     * Express Location Identifier.
+     * Only used for tags which had FedEx Express services.
      *
      * @param string $DispatchLocationId
      * return DeleteTagRequest
@@ -76,7 +76,7 @@ class DeleteTagRequest
     }
     
     /**
-     * The date FedEx will attempt to pick up the shipment from the Sender.
+     * Only used for tags which had FedEx Express services.
      *
      * @param date $DispatchDate
      * return DeleteTagRequest
@@ -88,7 +88,7 @@ class DeleteTagRequest
     }
     
     /**
-     * 
+     * If the original ProcessTagRequest specified third-party payment, then the delete request must contain the same pay type and payor account number for security purposes.
      *
      * @param Payment $Payment
      * return DeleteTagRequest

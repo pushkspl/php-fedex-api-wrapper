@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * 
+ * Options available for a tracking notification recipient.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,26 +16,14 @@ class TrackNotificationRecipientDetail
     protected $_name = 'TrackNotificationRecipientDetail';
 
     /**
-     * 
+     * The types of email notifications available for this recipient.
      *
-     * @param boolean $NotifyOnDelivery
+     * @param array[EMailNotificationEventType] $NotificationEventsAvailable
      * return TrackNotificationRecipientDetail
      */
-    public function setNotifyOnDelivery($notifyOnDelivery)
+    public function setNotificationEventsAvailable(array $notificationEventsAvailable)
     {
-        $this->NotifyOnDelivery = $notifyOnDelivery;
-        return $this;
-    }
-    
-    /**
-     * 
-     *
-     * @param boolean $NotifyOnException
-     * return TrackNotificationRecipientDetail
-     */
-    public function setNotifyOnException($notifyOnException)
-    {
-        $this->NotifyOnException = $notifyOnException;
+        $this->NotificationEventsAvailable = $notificationEventsAvailable;
         return $this;
     }
     

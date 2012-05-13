@@ -16,7 +16,7 @@ class TrackNotificationPackage
     protected $_name = 'TrackNotificationPackage';
 
     /**
-     * 
+     * FedEx assigned identifier for a package/shipment.
      *
      * @param string $TrackingNumber
      * return TrackNotificationPackage
@@ -28,7 +28,7 @@ class TrackNotificationPackage
     }
     
     /**
-     * 
+     * When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates. The summary information is used to determine which of the duplicates the intended tracking number is. This identifier is used on a subsequent track request to retrieve the tracking data for the desired tracking number.
      *
      * @param string $TrackingNumberUniqueIdentifiers
      * return TrackNotificationPackage
@@ -40,7 +40,7 @@ class TrackNotificationPackage
     }
     
     /**
-     * 
+     * Identification of a FedEx operating company (transportation).
      *
      * @param CarrierCodeType $CarrierCode
      * return TrackNotificationPackage
@@ -52,7 +52,7 @@ class TrackNotificationPackage
     }
     
     /**
-     * 
+     * The date the package was shipped (tendered to FedEx).
      *
      * @param date $ShipDate
      * return TrackNotificationPackage
@@ -64,7 +64,7 @@ class TrackNotificationPackage
     }
     
     /**
-     * 
+     * The destination address of this package. Only city, state/province, and country are returned.
      *
      * @param Address $Destination
      * return TrackNotificationPackage
@@ -76,7 +76,7 @@ class TrackNotificationPackage
     }
     
     /**
-     * 
+     * Options available for a tracking notification recipient.
      *
      * @param array[TrackNotificationRecipientDetail] $RecipientDetails
      * return TrackNotificationPackage

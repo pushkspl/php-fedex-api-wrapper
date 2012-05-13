@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * Identifies the type of funds FedEx should collect upon package delivery.
+ * Identifies the type of funds FedEx should collect upon shipment delivery.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

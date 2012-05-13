@@ -16,7 +16,7 @@ class Tax
     protected $_name = 'Tax';
 
     /**
-     * The type of tax applied to the shipment.
+     * 
      *
      * @param TaxType $TaxType
      * return Tax
@@ -40,7 +40,7 @@ class Tax
     }
     
     /**
-     * The amount of the tax applied to the shipment.
+     * 
      *
      * @param Money $Amount
      * return Tax

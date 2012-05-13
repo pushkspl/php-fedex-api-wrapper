@@ -28,7 +28,7 @@ class FreightShipmentLineItem
     }
     
     /**
-     * Specification of packaging for this commodity or class line.
+     * Specification of handling-unit packaging for this commodity or class line.
      *
      * @param PhysicalPackagingType $Packaging
      * return FreightShipmentLineItem

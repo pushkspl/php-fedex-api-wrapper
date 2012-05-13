@@ -16,7 +16,7 @@ class SignatureProofOfDeliveryLetterRequest
     protected $_name = 'SignatureProofOfDeliveryLetterRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return SignatureProofOfDeliveryLetterRequest
@@ -28,7 +28,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $ClientDetail
      * return SignatureProofOfDeliveryLetterRequest
@@ -40,7 +40,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $TransactionDetail
      * return SignatureProofOfDeliveryLetterRequest
@@ -52,7 +52,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * The version of the request being used.
      *
      * @param VersionId $Version
      * return SignatureProofOfDeliveryLetterRequest
@@ -76,7 +76,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     * More information.
+     * Additional customer-supplied text to be added to the body of the letter.
      *
      * @param string $AdditionalComments
      * return SignatureProofOfDeliveryLetterRequest
@@ -88,7 +88,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     *  Must be specified when type is LETTER.
+     * Identifies the set of SPOD image types.
      *
      * @param SignatureProofOfDeliveryImageType $LetterFormat
      * return SignatureProofOfDeliveryLetterRequest
@@ -100,7 +100,7 @@ class SignatureProofOfDeliveryLetterRequest
     }
     
     /**
-     * Information to be substituted for recipient information in letter. The actual delivery details will be available by default.
+     * If provided this information will be print on the letter.
      *
      * @param ContactAndAddress $Consignee
      * return SignatureProofOfDeliveryLetterRequest

@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * Details used while creating a pending shipment
+ * This information describes the kind of pending shipment being requested.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class PendingShipmentDetail
     protected $_name = 'PendingShipmentDetail';
 
     /**
-     * Pending Shipment Type
+     * 
      *
      * @param PendingShipmentType $Type
      * return PendingShipmentDetail
@@ -28,9 +28,9 @@ class PendingShipmentDetail
     }
     
     /**
-     * Date and time when this pending shipment expires.
+     * Date after which the pending shipment will no longer be available for completion.
      *
-     * @param dateTime $ExpirationDate
+     * @param date $ExpirationDate
      * return PendingShipmentDetail
      */
     public function setExpirationDate($expirationDate)
@@ -40,7 +40,7 @@ class PendingShipmentDetail
     }
     
     /**
-     * Details used for emailing a label.
+     * Only used with type of EMAIL.
      *
      * @param EMailLabelDetail $EmailLabelDetail
      * return PendingShipmentDetail

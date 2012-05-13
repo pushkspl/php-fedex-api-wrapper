@@ -112,7 +112,7 @@ class DropoffLocationProfile
     }
     
     /**
-     * Identifies if this location offers HAL (Hold at Location) service.
+     * Identifies if this location offers Express HAL (Hold at Location) service.
      *
      * @param boolean $HoldAtLocation
      * return DropoffLocationProfile
@@ -120,6 +120,18 @@ class DropoffLocationProfile
     public function setHoldAtLocation($holdAtLocation)
     {
         $this->HoldAtLocation = $holdAtLocation;
+        return $this;
+    }
+    
+    /**
+     * Identifies if this location offers Ground HAL (Hold at Location) service.
+     *
+     * @param boolean $GroundHoldAtLocation
+     * return DropoffLocationProfile
+     */
+    public function setGroundHoldAtLocation($groundHoldAtLocation)
+    {
+        $this->GroundHoldAtLocation = $groundHoldAtLocation;
         return $this;
     }
     

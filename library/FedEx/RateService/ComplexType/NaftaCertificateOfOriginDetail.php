@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The descriptive data regarding NAFTA COO.
+ * Data required to produce a Certificate of Origin document. Remaining content (business data) to be defined once requirements have been completed.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

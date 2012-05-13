@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\SimpleType;
 
 /**
- * 
+ * The format of the email
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

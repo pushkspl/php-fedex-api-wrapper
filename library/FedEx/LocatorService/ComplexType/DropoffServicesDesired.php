@@ -100,7 +100,7 @@ class DropoffServicesDesired
     }
     
     /**
-     * Locations that support Hold at Location.
+     * Locations that support Express Hold at Location.
      *
      * @param boolean $HoldAtLocation
      * return DropoffServicesDesired
@@ -108,6 +108,18 @@ class DropoffServicesDesired
     public function setHoldAtLocation($holdAtLocation)
     {
         $this->HoldAtLocation = $holdAtLocation;
+        return $this;
+    }
+    
+    /**
+     * Locations that support Ground Hold at Location.
+     *
+     * @param boolean $GroundHoldAtLocation
+     * return DropoffServicesDesired
+     */
+    public function setGroundHoldAtLocation($groundHoldAtLocation)
+    {
+        $this->GroundHoldAtLocation = $groundHoldAtLocation;
         return $this;
     }
     
@@ -168,6 +180,30 @@ class DropoffServicesDesired
     public function setReturnSystem($returnSystem)
     {
         $this->ReturnSystem = $returnSystem;
+        return $this;
+    }
+    
+    /**
+     * Locations that support Redirect to Hold of shipments.
+     *
+     * @param RedirectToHoldLocationType $RedirectToHoldLocation
+     * return DropoffServicesDesired
+     */
+    public function setRedirectToHoldLocation(\FedEx\LocatorService\SimpleType\RedirectToHoldLocationType $redirectToHoldLocation)
+    {
+        $this->RedirectToHoldLocation = $redirectToHoldLocation;
+        return $this;
+    }
+    
+    /**
+     * Locations in the same state that support Redirect to Hold of shipments.
+     *
+     * @param boolean $SearchSameStateOnly
+     * return DropoffServicesDesired
+     */
+    public function setSearchSameStateOnly($searchSameStateOnly)
+    {
+        $this->SearchSameStateOnly = $searchSameStateOnly;
         return $this;
     }
     

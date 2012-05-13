@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Solid (filled) rectangular area on label.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

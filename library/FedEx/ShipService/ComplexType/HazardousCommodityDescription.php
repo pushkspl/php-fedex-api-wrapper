@@ -28,7 +28,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param HazardousCommodityPackingGroupType $PackingGroup
      * return HazardousCommodityDescription
@@ -40,7 +40,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $ProperShippingName
      * return HazardousCommodityDescription
@@ -52,7 +52,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $TechnicalName
      * return HazardousCommodityDescription
@@ -64,7 +64,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $HazardClass
      * return HazardousCommodityDescription
@@ -76,7 +76,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param array[string] $SubsidiaryClasses
      * return HazardousCommodityDescription
@@ -88,7 +88,7 @@ class HazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $LabelText
      * return HazardousCommodityDescription

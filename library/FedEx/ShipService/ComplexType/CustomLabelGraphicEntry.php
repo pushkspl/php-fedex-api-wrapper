@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Image to be included from printer's memory, or from a local file for offline clients.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -28,7 +28,7 @@ class CustomLabelGraphicEntry
     }
     
     /**
-     * 
+     * Printer-specific index of graphic image to be printed.
      *
      * @param string $PrinterGraphicId
      * return CustomLabelGraphicEntry
@@ -36,6 +36,18 @@ class CustomLabelGraphicEntry
     public function setPrinterGraphicId($printerGraphicId)
     {
         $this->PrinterGraphicId = $printerGraphicId;
+        return $this;
+    }
+    
+    /**
+     * Fully-qualified path and file name for graphic image to be printed.
+     *
+     * @param string $FileGraphicFullName
+     * return CustomLabelGraphicEntry
+     */
+    public function setFileGraphicFullName($fileGraphicFullName)
+    {
+        $this->FileGraphicFullName = $fileGraphicFullName;
         return $this;
     }
     

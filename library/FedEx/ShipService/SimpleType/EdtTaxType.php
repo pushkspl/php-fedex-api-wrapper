@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

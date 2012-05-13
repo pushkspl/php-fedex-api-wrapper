@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * Holds FedEx scanning information about a package.
+ * FedEx scanning information about a package.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class TrackEvent
     protected $_name = 'TrackEvent';
 
     /**
-     * The time the event happened.
+     * The time this event occurred.
      *
      * @param dateTime $Timestamp
      * return TrackEvent
@@ -28,7 +28,7 @@ class TrackEvent
     }
     
     /**
-     * Carrier’s scan code. Pairs with EventDescription.
+     * Carrier's scan code. Pairs with EventDescription.
      *
      * @param string $EventType
      * return TrackEvent
@@ -40,7 +40,7 @@ class TrackEvent
     }
     
     /**
-     * Literal description of the Scan activity.
+     * Literal description that pairs with the EventType.
      *
      * @param string $EventDescription
      * return TrackEvent
@@ -52,7 +52,7 @@ class TrackEvent
     }
     
     /**
-     * Further defines the Scan Type code’s specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
+     * Further defines the Scan Type code's specific type (e.g., DEX08 business closed). Pairs with StatusExceptionDescription.
      *
      * @param string $StatusExceptionCode
      * return TrackEvent
@@ -88,7 +88,7 @@ class TrackEvent
     }
     
     /**
-     * Not available at this time.
+     * Indicates where the arrival actually occurred.
      *
      * @param ArrivalLocationType $ArrivalLocation
      * return TrackEvent

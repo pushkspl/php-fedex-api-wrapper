@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The descriptive data for a physical location.
+ * Descriptive data for a physical location. May be used as an actual physical address (place to which one could go), or as a container of "address parts" which should be handled as a unit (such as a city-state-ZIP combination within the US).
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -52,7 +52,7 @@ class Address
     }
     
     /**
-     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country. This element is required if both the City and StateOrProvinceCode are not present.
+     * Identification of a region (usually small) for mail/package delivery. Format and presence of this field will vary, depending on country.
      *
      * @param string $PostalCode
      * return Address
@@ -64,7 +64,7 @@ class Address
     }
     
     /**
-     * Relevant only to addresses in Puerto Rico. In Puerto Rico, multiple addresses within the same ZIP code can have the same house number and street name. When this is the case, the urbanization code is needed to distinguish them.
+     * Relevant only to addresses in Puerto Rico.
      *
      * @param string $UrbanizationCode
      * return Address
@@ -76,7 +76,7 @@ class Address
     }
     
     /**
-     * Identification of a country.
+     * The two-letter code used to identify a country.
      *
      * @param string $CountryCode
      * return Address
@@ -88,7 +88,7 @@ class Address
     }
     
     /**
-     * Indicates whether this address is residential (as opposed to commercial).
+     * Indicates whether this address residential (as opposed to commercial).
      *
      * @param boolean $Residential
      * return Address

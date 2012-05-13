@@ -28,7 +28,7 @@ class ServiceSubOptionDetail
     }
     
     /**
-     * Identifies the smartPostHubId used during rate quote, if SMARTPOST_HUB_ID is a variable option on the rate request.
+     * Identifies the smartPostHubId used during rate quote, if SMART_POST_HUB_ID is a variable option on the rate request.
      *
      * @param string $SmartPostHubId
      * return ServiceSubOptionDetail
@@ -36,6 +36,18 @@ class ServiceSubOptionDetail
     public function setSmartPostHubId($smartPostHubId)
     {
         $this->SmartPostHubId = $smartPostHubId;
+        return $this;
+    }
+    
+    /**
+     * Identifies the indicia used during rate quote, if SMART_POST_ALLOWED_INDICIA is a variable option on the rate request.
+     *
+     * @param SmartPostIndiciaType $SmartPostIndicia
+     * return ServiceSubOptionDetail
+     */
+    public function setSmartPostIndicia(\FedEx\RateService\SimpleType\SmartPostIndiciaType $smartPostIndicia)
+    {
+        $this->SmartPostIndicia = $smartPostIndicia;
         return $this;
     }
     

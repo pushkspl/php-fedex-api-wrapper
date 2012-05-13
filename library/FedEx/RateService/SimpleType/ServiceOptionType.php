@@ -13,7 +13,8 @@ namespace FedEx\RateService\SimpleType;
 class ServiceOptionType
     extends AbstractSimpleType
 {
-    const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
-    const _SMARTPOST_HUB_ID = 'SMARTPOST_HUB_ID';
+    const _SATURDAY_DELIVERY = 'SATURDAY_DELIVERY';
+    const _SMART_POST_ALLOWED_INDICIA = 'SMART_POST_ALLOWED_INDICIA';
+    const _SMART_POST_HUB_ID = 'SMART_POST_HUB_ID';
 }

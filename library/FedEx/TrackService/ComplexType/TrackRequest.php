@@ -16,7 +16,7 @@ class TrackRequest
     protected $_name = 'TrackRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return TrackRequest
@@ -28,7 +28,7 @@ class TrackRequest
     }
     
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $ClientDetail
      * return TrackRequest
@@ -40,7 +40,7 @@ class TrackRequest
     }
     
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $TransactionDetail
      * return TrackRequest
@@ -52,7 +52,7 @@ class TrackRequest
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * The version of the request being used.
      *
      * @param VersionId $Version
      * return TrackRequest
@@ -64,7 +64,7 @@ class TrackRequest
     }
     
     /**
-     * Not available at this time. For FedEx internal use only.
+     * The FedEx operating company (transportation) used for this package's delivery.
      *
      * @param CarrierCodeType $CarrierCode
      * return TrackRequest
@@ -76,7 +76,19 @@ class TrackRequest
     }
     
     /**
-     * Identifies the package that tracking information is being requested of.
+     * Identifies operating transportation company that is the specific to the carrier code.
+     *
+     * @param OperatingCompanyType $OperatingCompany
+     * return TrackRequest
+     */
+    public function setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany)
+    {
+        $this->OperatingCompany = $operatingCompany;
+        return $this;
+    }
+    
+    /**
+     * The type and value of the package identifier that is to be used to retrieve the tracking information for a package or group of packages.
      *
      * @param TrackPackageIdentifier $PackageIdentifier
      * return TrackRequest
@@ -88,7 +100,7 @@ class TrackRequest
     }
     
     /**
-     * Required if a previous track-by-number response indicated that duplicates exist. The previous response will return summary information about the available choices along with this field. If it is desired to fully track one of the items returned in the duplicate summary reply, then the subsequent request must contain the tracking number and the paired unmodified unique ID. 
+     * Used to distinguish duplicate FedEx tracking numbers.
      *
      * @param string $TrackingNumberUniqueIdentifier
      * return TrackRequest
@@ -100,7 +112,7 @@ class TrackRequest
     }
     
     /**
-     * Required entry of date range to find desired results for reference tracking number. If not provided, FedEx will default to a range that may not refine the search as needed. If provided, ShipDateRangeEnd is required.
+     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
      * @param date $ShipDateRangeBegin
      * return TrackRequest
@@ -112,7 +124,7 @@ class TrackRequest
     }
     
     /**
-     * If provided, ShipDateRangeBegin is required. Required entry of date range to find desired results for reference tracking number. If not provided, results may vary
+     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
      * @param date $ShipDateRangeEnd
      * return TrackRequest
@@ -124,7 +136,7 @@ class TrackRequest
     }
     
     /**
-     * Providing the ShipmentAccountNumber will return all packages matching the search value and associated with this account. If account is not specified, then the destination country and postal (applicable countries) is required. The Reply data may be restricted if ShipmentAccountNumber is not provided.
+     * For tracking by references information either the account number or destination postal code and country must be provided.
      *
      * @param string $ShipmentAccountNumber
      * return TrackRequest
@@ -136,7 +148,7 @@ class TrackRequest
     }
     
     /**
-     * The descriptive data for the physical location to which the shipment is destined.
+     * For tracking by references information either the account number or destination postal code and country must be provided.
      *
      * @param Address $Destination
      * return TrackRequest
@@ -148,7 +160,7 @@ class TrackRequest
     }
     
     /**
-     * If false (the default) then reply will contain summary/profile data including current status. If true reply contains profile + detailed scan activity (multiple TrackDetail objects) for each package.
+     * If false the reply will contain summary/profile data including current status. If true the reply contains profile + detailed scan activity for each package.
      *
      * @param boolean $IncludeDetailedScans
      * return TrackRequest
@@ -160,7 +172,7 @@ class TrackRequest
     }
     
     /**
-     * Required in order to obtain the additional data on second and subsequent track requests when more related tracking numbers exist that exceed the capacity of any one response structure. Should be absent from any first Track request. Populate PagingToken value with the contents returned in the previous reply PagingToken element. Populate TrackPackageIdentifier value with original request value.
+     * When the MoreData field = true in a TrackReply the PagingToken must be sent in the subsequent TrackRequest to retrieve the next page of data.
      *
      * @param string $PagingToken
      * return TrackRequest

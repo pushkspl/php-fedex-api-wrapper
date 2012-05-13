@@ -16,7 +16,7 @@ class RateReply
     protected $_name = 'RateReply';
 
     /**
-     * This indicates the highest level of severity of all the notifications returned in this reply
+     * This indicates the highest level of severity of all the notifications returned in this reply.
      *
      * @param NotificationSeverityType $HighestSeverity
      * return RateReply
@@ -40,7 +40,7 @@ class RateReply
     }
     
     /**
-     * Descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains the CustomerTransactionId that was sent in the request.
      *
      * @param TransactionDetail $TransactionDetail
      * return RateReply
@@ -52,7 +52,7 @@ class RateReply
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * The version of this reply.
      *
      * @param VersionId $Version
      * return RateReply
@@ -64,7 +64,7 @@ class RateReply
     }
     
     /**
-     * Rate information which was requested.
+     * Each element contains all rate data for a single service. If service was specified in the request, there will be a single entry in this array; if service was omitted in the request, there will be a separate entry in this array for each service being compared.
      *
      * @param array[RateReplyDetail] $RateReplyDetails
      * return RateReply

@@ -16,7 +16,7 @@ class TrackNotificationReply
     protected $_name = 'TrackNotificationReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * This contains the severity type of the most severe Notification in the Notifications array.
      *
      * @param NotificationSeverityType $HighestSeverity
      * return TrackNotificationReply
@@ -28,7 +28,7 @@ class TrackNotificationReply
     }
     
     /**
-     * The descriptive data detailing the status of a submitted transaction.
+     * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
      * @param array[Notification] $Notifications
      * return TrackNotificationReply
@@ -40,7 +40,7 @@ class TrackNotificationReply
     }
     
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
      * @param TransactionDetail $TransactionDetail
      * return TrackNotificationReply
@@ -52,7 +52,7 @@ class TrackNotificationReply
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Contains the version of the reply being used.
      *
      * @param VersionId $Version
      * return TrackNotificationReply
@@ -64,7 +64,7 @@ class TrackNotificationReply
     }
     
     /**
-     * True if duplicate packages with the same tracking number have been found, and only limited data will be provided for each one.
+     * True if duplicate packages (more than one package with the same tracking number) have been found, the packages array contains information about each duplicate. Use this information to determine which of the tracking numbers is the one you need and resend your request using the tracking number and TrackingNumberUniqueIdentifier for that package.
      *
      * @param boolean $DuplicateWaybill
      * return TrackNotificationReply
@@ -88,7 +88,7 @@ class TrackNotificationReply
     }
     
     /**
-     * Value that must be passed in a TrackNotification request to retrieve the next set of packages.
+     * Value that must be passed in a TrackNotification request to retrieve the next set of packages (when MoreDataAvailable = true).
      *
      * @param string $PagingToken
      * return TrackNotificationReply
@@ -100,7 +100,7 @@ class TrackNotificationReply
     }
     
     /**
-     * Data pertaining to packages.
+     * Information about the notifications that are available for this tracking number. If there are duplicates the ship date and destination address information is returned for determining which TrackingNumberUniqueIdentifier to use on a subsequent request.
      *
      * @param array[TrackNotificationPackage] $Packages
      * return TrackNotificationReply

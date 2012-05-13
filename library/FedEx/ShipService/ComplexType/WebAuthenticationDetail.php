@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+ * Used in authentication of the sender's identity.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * The type of the surcharge.
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -14,6 +14,7 @@ class SurchargeType
     extends AbstractSimpleType
 {
     const _ADDITIONAL_HANDLING = 'ADDITIONAL_HANDLING';
+    const _ANCILLARY_FEE = 'ANCILLARY_FEE';
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';
     const _BROKER_SELECT_OPTION = 'BROKER_SELECT_OPTION';
     const _CANADIAN_DESTINATION = 'CANADIAN_DESTINATION';
@@ -23,9 +24,11 @@ class SurchargeType
     const _DANGEROUS_GOODS = 'DANGEROUS_GOODS';
     const _DELIVERY_AREA = 'DELIVERY_AREA';
     const _DELIVERY_CONFIRMATION = 'DELIVERY_CONFIRMATION';
+    const _DOCUMENTATION_FEE = 'DOCUMENTATION_FEE';
     const _DRY_ICE = 'DRY_ICE';
     const _EMAIL_LABEL = 'EMAIL_LABEL';
     const _EUROPE_FIRST = 'EUROPE_FIRST';
+    const _EXCESS_VALUE = 'EXCESS_VALUE';
     const _EXHIBITION = 'EXHIBITION';
     const _EXPORT = 'EXPORT';
     const _EXTREME_LENGTH = 'EXTREME_LENGTH';
@@ -33,7 +36,9 @@ class SurchargeType
     const _FICE = 'FICE';
     const _FLATBED = 'FLATBED';
     const _FREIGHT_GUARANTEE = 'FREIGHT_GUARANTEE';
+    const _FREIGHT_ON_VALUE = 'FREIGHT_ON_VALUE';
     const _FUEL = 'FUEL';
+    const _HOLD_AT_LOCATION = 'HOLD_AT_LOCATION';
     const _HOME_DELIVERY_APPOINTMENT = 'HOME_DELIVERY_APPOINTMENT';
     const _HOME_DELIVERY_DATE_CERTAIN = 'HOME_DELIVERY_DATE_CERTAIN';
     const _HOME_DELIVERY_EVENING = 'HOME_DELIVERY_EVENING';
@@ -68,7 +73,6 @@ class SurchargeType
     const _SATURDAY_PICKUP = 'SATURDAY_PICKUP';
     const _SIGNATURE_OPTION = 'SIGNATURE_OPTION';
     const _TARP = 'TARP';
+    const _THIRD_PARTY_CONSIGNEE = 'THIRD_PARTY_CONSIGNEE';
     const _TRANSMART_SERVICE_FEE = 'TRANSMART_SERVICE_FEE';
-    const _EXCESS_VALUE = 'EXCESS_VALUE';
-    const _HOLD_AT_LOCATION = 'HOLD_AT_LOCATION';
 }

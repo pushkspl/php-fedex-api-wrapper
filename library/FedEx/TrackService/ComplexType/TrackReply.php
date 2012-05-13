@@ -16,7 +16,7 @@ class TrackReply
     protected $_name = 'TrackReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * This contains the severity type of the most severe Notification in the Notifications array.
      *
      * @param NotificationSeverityType $HighestSeverity
      * return TrackReply
@@ -28,7 +28,7 @@ class TrackReply
     }
     
     /**
-     * The descriptive data detailing the status of a submitted transaction.
+     * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
      * @param array[Notification] $Notifications
      * return TrackReply
@@ -40,7 +40,7 @@ class TrackReply
     }
     
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
      * @param TransactionDetail $TransactionDetail
      * return TrackReply
@@ -52,7 +52,7 @@ class TrackReply
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Contains the version of the reply being used.
      *
      * @param VersionId $Version
      * return TrackReply
@@ -64,7 +64,7 @@ class TrackReply
     }
     
     /**
-     * True if duplicates exist that requires further request detail to qualify the specific shipment. Returned if a track by number results in duplicates
+     * True if duplicate packages (more than one package with the same tracking number) have been found, and only limited data will be provided for each one.
      *
      * @param boolean $DuplicateWaybill
      * return TrackReply
@@ -76,7 +76,7 @@ class TrackReply
     }
     
     /**
-     * True if more data exists. Returned if a track by number results in duplicates.
+     * True if additional packages remain to be retrieved.
      *
      * @param boolean $MoreData
      * return TrackReply
@@ -88,7 +88,7 @@ class TrackReply
     }
     
     /**
-     * Populated in the response when more related tracking information exist that exceed the capacity of any one response structure. Client should populate PagingToken value in subsequent track requests with the value returned in the previous reply. DO not modify the field value. Returned if a track by number results in duplicates.
+     * Value that must be passed in a TrackNotification request to retrieve the next set of packages (when MoreDataAvailable = true).
      *
      * @param string $PagingToken
      * return TrackReply
@@ -100,7 +100,7 @@ class TrackReply
     }
     
     /**
-     * Holds detailed tracking information for the requested package.
+     * Contains detailed tracking information for the requested packages(s).
      *
      * @param array[TrackDetail] $TrackDetails
      * return TrackReply

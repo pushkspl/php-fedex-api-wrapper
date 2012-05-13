@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Electronic Trade document references used with the ETD special service.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EtdDetail
     protected $_name = 'EtdDetail';
 
     /**
-     * 
+     * Indicates the types of shipping documents produced for the shipper by FedEx (see ShippingDocumentSpecification) which should be copied back to the shipper in the shipment result data.
      *
      * @param array[RequestedShippingDocumentType] $RequestedDocumentCopies
      * return EtdDetail

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EdtExciseCondition
     protected $_name = 'EdtExciseCondition';
 
     /**
-     * ?
+     * 
      *
      * @param string $Category
      * return EdtExciseCondition

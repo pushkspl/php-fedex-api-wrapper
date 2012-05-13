@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- * 
+ * Identification of the type of barcode (symbology) used on FedEx documents and labels.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

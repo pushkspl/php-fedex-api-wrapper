@@ -42,7 +42,7 @@ class RequestedPackageLineItem
     /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
-     * @param positiveInteger $GroupPackageCount
+     * @param nonNegativeInteger $GroupPackageCount
      * return RequestedPackageLineItem
      */
     public function setGroupPackageCount($groupPackageCount)

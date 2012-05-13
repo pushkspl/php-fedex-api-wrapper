@@ -16,6 +16,18 @@ class Contact
     protected $_name = 'Contact';
 
     /**
+     * Client provided identifier corresponding to this contact information.
+     *
+     * @param string $ContactId
+     * return Contact
+     */
+    public function setContactId($contactId)
+    {
+        $this->ContactId = $contactId;
+        return $this;
+    }
+    
+    /**
      * Identifies the contact person's name.
      *
      * @param string $PersonName
@@ -40,7 +52,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's company name.
+     * Identifies the company this contact is associated with.
      *
      * @param string $CompanyName
      * return Contact
@@ -52,7 +64,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's phone number.
+     * Identifies the phone number associated with this contact.
      *
      * @param string $PhoneNumber
      * return Contact
@@ -64,7 +76,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's phone number extension.
+     * Identifies the phone extension associated with this contact.
      *
      * @param string $PhoneExtension
      * return Contact
@@ -76,7 +88,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's pager number.
+     * Identifies the pager number associated with this contact.
      *
      * @param string $PagerNumber
      * return Contact
@@ -88,7 +100,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's fax machine phone number.
+     * Identifies the fax number associated with this contact.
      *
      * @param string $FaxNumber
      * return Contact
@@ -100,7 +112,7 @@ class Contact
     }
     
     /**
-     * Identifies the contact person's email address.
+     * Identifies the email address associated with this contact.
      *
      * @param string $EMailAddress
      * return Contact

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Department of Commerce/Department of State information about this shipment.
+ * Data required to complete the Destionation Control Statement for US exports.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -28,7 +28,7 @@ class DestinationControlDetail
     }
     
     /**
-     * Countries this shipment is destined for.
+     * Comma-separated list of up to four country codes, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $DestinationCountries
      * return DestinationControlDetail
@@ -40,7 +40,7 @@ class DestinationControlDetail
     }
     
     /**
-     * Department of State End User.
+     * Name of end user, required for DEPARTMENT_OF_STATE statement.
      *
      * @param string $EndUser
      * return DestinationControlDetail

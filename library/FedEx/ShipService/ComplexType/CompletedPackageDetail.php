@@ -64,7 +64,7 @@ class CompletedPackageDetail
     }
     
     /**
-     * The rating information for this package. Note, this is a courtesy rate and may be different from what is invoiced.
+     * All package-level rating data for this package, which may include data for multiple rate types.
      *
      * @param PackageRating $PackageRating
      * return CompletedPackageDetail
@@ -76,50 +76,14 @@ class CompletedPackageDetail
     }
     
     /**
-     * Associated with package, due to interaction with per-package hazardous materials presence/absence.
+     * 
      *
-     * @param string $GroundServiceCode
+     * @param PackageOperationalDetail $OperationalDetail
      * return CompletedPackageDetail
      */
-    public function setGroundServiceCode($groundServiceCode)
+    public function setOperationalDetail(PackageOperationalDetail $operationalDetail)
     {
-        $this->GroundServiceCode = $groundServiceCode;
-        return $this;
-    }
-    
-    /**
-     * The data that is used to from the Astra and 2DCommon barcodes for the label..
-     *
-     * @param PackageBarcodes $Barcodes
-     * return CompletedPackageDetail
-     */
-    public function setBarcodes(PackageBarcodes $barcodes)
-    {
-        $this->Barcodes = $barcodes;
-        return $this;
-    }
-    
-    /**
-     * The textual description of the special service applied to the package.
-     *
-     * @param string $AstraHandlingText
-     * return CompletedPackageDetail
-     */
-    public function setAstraHandlingText($astraHandlingText)
-    {
-        $this->AstraHandlingText = $astraHandlingText;
-        return $this;
-    }
-    
-    /**
-     * ?
-     *
-     * @param array[AstraLabelElement] $AstraLabelElements
-     * return CompletedPackageDetail
-     */
-    public function setAstraLabelElements(array $astraLabelElements)
-    {
-        $this->AstraLabelElements = $astraLabelElements;
+        $this->OperationalDetail = $operationalDetail;
         return $this;
     }
     
@@ -136,7 +100,7 @@ class CompletedPackageDetail
     }
     
     /**
-     * All package-level shipping documents (other than labels and barcodes).
+     * All package-level shipping documents (other than labels and barcodes). For use in loads after January, 2008.
      *
      * @param array[ShippingDocument] $PackageDocuments
      * return CompletedPackageDetail
@@ -160,7 +124,7 @@ class CompletedPackageDetail
     }
     
     /**
-     * The actual signature option applied to this shipment. This could be different than the signature option requested if a conflict occured with other service features in the shipment.
+     * Actual signature option applied, to allow for cases in which the original value conflicted with other service features in the shipment.
      *
      * @param SignatureOptionType $SignatureOption
      * return CompletedPackageDetail

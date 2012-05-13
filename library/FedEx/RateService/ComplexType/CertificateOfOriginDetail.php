@@ -30,10 +30,10 @@ class CertificateOfOriginDetail
     /**
      * Specifies the usage and identification of customer supplied images to be used on this document.
      *
-     * @param CustomerImageUsage $CustomerImageUsages
+     * @param array[CustomerImageUsage] $CustomerImageUsages
      * return CertificateOfOriginDetail
      */
-    public function setCustomerImageUsages(CustomerImageUsage $customerImageUsages)
+    public function setCustomerImageUsages(array $customerImageUsages)
     {
         $this->CustomerImageUsages = $customerImageUsages;
         return $this;

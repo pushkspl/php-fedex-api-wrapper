@@ -28,7 +28,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param HazardousCommodityPackingGroupType $PackingGroup
      * return ValidatedHazardousCommodityDescription
@@ -40,7 +40,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $ProperShippingName
      * return ValidatedHazardousCommodityDescription
@@ -64,7 +64,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $TechnicalName
      * return ValidatedHazardousCommodityDescription
@@ -76,7 +76,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $HazardClass
      * return ValidatedHazardousCommodityDescription
@@ -88,7 +88,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param array[string] $SubsidiaryClasses
      * return ValidatedHazardousCommodityDescription
@@ -112,7 +112,7 @@ class ValidatedHazardousCommodityDescription
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $LabelText
      * return ValidatedHazardousCommodityDescription

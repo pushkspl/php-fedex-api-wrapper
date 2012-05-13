@@ -35,7 +35,7 @@ $rateRequest->setClientDetail($clientDetail);
 
 //TransactionDetail
 $transactionDetail = new ComplexType\TransactionDetail();
-$transactionDetail->setCustomerTransactionId(' *** Rate Available Services Request v8 using PHP ***');
+$transactionDetail->setCustomerTransactionId(' *** Rate Available Services Request v10 using PHP ***');
 
 $rateRequest->setTransactionDetail($transactionDetail);
 
@@ -44,7 +44,7 @@ $rateRequest->setTransactionDetail($transactionDetail);
 $version = new ComplexType\VersionId();
 $version
     ->setServiceId('crs')
-    ->setMajor(8)
+    ->setMajor(10)
     ->setIntermediate(0)
     ->setMinor(0);
 
@@ -112,9 +112,6 @@ $requestedShipment->setRateRequestTypes(array(
 //RequestedShipment\PackageCount
 $requestedShipment->setPackageCount(2);
 
-//RequestedShipment\PackageDetail
-$requestedShipment->setPackageDetail(new SimpleType\RequestedPackageDetailType(SimpleType\RequestedPackageDetailType::_INDIVIDUAL_PACKAGES));
-
 //RequestedShipment\RequestedPackageLineItems
 $lineItems = array();
 
@@ -133,6 +130,7 @@ $item1Dimensions
 $item1 = new ComplexType\RequestedPackageLineItem();
 $item1->setWeight($item1Weight);
 $item1->setDimensions($item1Dimensions);
+$item1->setGroupPackageCount(1);
 
 $item2Weight = new ComplexType\Weight();
 $item2Weight
@@ -149,6 +147,7 @@ $item2Dimensions
 $item2 = new ComplexType\RequestedPackageLineItem();
 $item2->setWeight($item2Weight);
 $item2->setDimensions($item2Dimensions);
+$item2->setGroupPackageCount(1);
 
 $lineItems[] = $item1;
 $lineItems[] = $item2;

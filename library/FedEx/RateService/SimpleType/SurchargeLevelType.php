@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * The type of the surcharge level.
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

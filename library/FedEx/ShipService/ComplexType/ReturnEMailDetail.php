@@ -28,7 +28,7 @@ class ReturnEMailDetail
     }
     
     /**
-     * Allowed Special service type
+     * Identifies the allowed (merchant-authorized) special services which may be selected when the subsequent shipment is created. Only services represented in EMailLabelAllowedSpecialServiceType will be controlled by this list.
      *
      * @param array[ReturnEMailAllowedSpecialServiceType] $AllowedSpecialServices
      * return ReturnEMailDetail

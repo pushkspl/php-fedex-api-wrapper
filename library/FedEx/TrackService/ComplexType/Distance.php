@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * The descriptive data that defines the extent of space between two objects or places.
+ * Driving or other transportation distances, distinct from dimension measurements.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

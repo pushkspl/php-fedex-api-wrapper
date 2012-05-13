@@ -172,6 +172,18 @@ class RateReplyDetail
     }
     
     /**
+     * Maximum expected transit time
+     *
+     * @param TransitTimeType $MaximumTransitTime
+     * return RateReplyDetail
+     */
+    public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
+    {
+        $this->MaximumTransitTime = $maximumTransitTime;
+        return $this;
+    }
+    
+    /**
      * The signature option for this package.
      *
      * @param SignatureOptionType $SignatureOption
@@ -196,7 +208,7 @@ class RateReplyDetail
     }
     
     /**
-     * Rate information which was requested.
+     * Each element contains all rate data for a single rate type.
      *
      * @param array[RatedShipmentDetail] $RatedShipmentDetails
      * return RateReplyDetail

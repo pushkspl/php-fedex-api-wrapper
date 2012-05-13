@@ -30,54 +30,6 @@ class CodReturnShipmentDetail
     /**
      * Currently not supported.
      *
-     * @param string $Handling
-     * return CodReturnShipmentDetail
-     */
-    public function setHandling($handling)
-    {
-        $this->Handling = $handling;
-        return $this;
-    }
-    
-    /**
-     * The description of the FedEx service type used for the COD return shipment. Currently not supported.
-     *
-     * @param string $ServiceTypeDescription
-     * return CodReturnShipmentDetail
-     */
-    public function setServiceTypeDescription($serviceTypeDescription)
-    {
-        $this->ServiceTypeDescription = $serviceTypeDescription;
-        return $this;
-    }
-    
-    /**
-     * The description of the packaging used for the COD return shipment.
-     *
-     * @param string $PackagingDescription
-     * return CodReturnShipmentDetail
-     */
-    public function setPackagingDescription($packagingDescription)
-    {
-        $this->PackagingDescription = $packagingDescription;
-        return $this;
-    }
-    
-    /**
-     * Currently not supported.
-     *
-     * @param string $SecuredDescription
-     * return CodReturnShipmentDetail
-     */
-    public function setSecuredDescription($securedDescription)
-    {
-        $this->SecuredDescription = $securedDescription;
-        return $this;
-    }
-    
-    /**
-     * Currently not supported.
-     *
      * @param Party $Remitter
      * return CodReturnShipmentDetail
      */
@@ -101,28 +53,37 @@ class CodReturnShipmentDetail
     
     /**
      * 
-                The CodRoutingDetail element will contain the COD return tracking number and form id. In the case of a COD multiple piece shipment these will need to be inserted in the request for the last piece of the multiple piece shipment.
-                The service commitment is the only other element of the RoutingDetail that is used for a CodRoutingDetail.
-              
      *
-     * @param RoutingDetail $CodRoutingDetail
+     * @param ShipmentOperationalDetail $ShipmentOperationalDetail
      * return CodReturnShipmentDetail
      */
-    public function setCodRoutingDetail(RoutingDetail $codRoutingDetail)
+    public function setShipmentOperationalDetail(ShipmentOperationalDetail $shipmentOperationalDetail)
     {
-        $this->CodRoutingDetail = $codRoutingDetail;
+        $this->ShipmentOperationalDetail = $shipmentOperationalDetail;
         return $this;
     }
     
     /**
-     * Contains the data which form the Astra and 2DCommon barcodes that print on the COD return label.
+     * Specifies the tracking id for the payment on the COD return.
      *
-     * @param PackageBarcodes $Barcodes
+     * @param TrackingId $TrackingId
      * return CodReturnShipmentDetail
      */
-    public function setBarcodes(PackageBarcodes $barcodes)
+    public function setTrackingId(TrackingId $trackingId)
     {
-        $this->Barcodes = $barcodes;
+        $this->TrackingId = $trackingId;
+        return $this;
+    }
+    
+    /**
+     * Specifies the information for COD payment on an Express COD shipment. This information is not tied to any outbound package.
+     *
+     * @param PackageOperationalDetail $PackageOperationalDetail
+     * return CodReturnShipmentDetail
+     */
+    public function setPackageOperationalDetail(PackageOperationalDetail $packageOperationalDetail)
+    {
+        $this->PackageOperationalDetail = $packageOperationalDetail;
         return $this;
     }
     

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * The descriptive data for FedEx pending shipment
+ * This information describes the kind of pending shipment being requested.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -28,7 +28,7 @@ class PendingShipmentDetail
     }
     
     /**
-     * Date when the pending shipment expires.
+     * Date after which the pending shipment will no longer be available for completion.
      *
      * @param date $ExpirationDate
      * return PendingShipmentDetail
@@ -40,7 +40,7 @@ class PendingShipmentDetail
     }
     
     /**
-     * Descriptive data about notification email
+     * Only used with type of EMAIL.
      *
      * @param EMailLabelDetail $EmailLabelDetail
      * return PendingShipmentDetail

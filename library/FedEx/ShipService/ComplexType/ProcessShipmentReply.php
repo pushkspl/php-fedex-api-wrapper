@@ -75,6 +75,18 @@ class ProcessShipmentReply
         return $this;
     }
     
+    /**
+     * Empty unless error label behavior is PACKAGE_ERROR_LABELS and one or more errors occured during transaction processing.
+     *
+     * @param array[ShippingDocument] $ErrorLabels
+     * return ProcessShipmentReply
+     */
+    public function setErrorLabels(array $errorLabels)
+    {
+        $this->ErrorLabels = $errorLabels;
+        return $this;
+    }
+    
 
     
 }

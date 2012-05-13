@@ -63,6 +63,30 @@ class CustomDocumentDetail
         return $this;
     }
     
+    /**
+     * Identifies the individual document specified by the client.
+     *
+     * @param string $CustomDocumentIdentifier
+     * return CustomDocumentDetail
+     */
+    public function setCustomDocumentIdentifier($customDocumentIdentifier)
+    {
+        $this->CustomDocumentIdentifier = $customDocumentIdentifier;
+        return $this;
+    }
+    
+    /**
+     * If provided, thermal documents will include specified doc tab content. If omitted, document will be produced without doc tab content.
+     *
+     * @param DocTabContent $DocTabContent
+     * return CustomDocumentDetail
+     */
+    public function setDocTabContent(DocTabContent $docTabContent)
+    {
+        $this->DocTabContent = $docTabContent;
+        return $this;
+    }
+    
 
     
 }

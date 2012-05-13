@@ -16,7 +16,7 @@ class CancelPendingShipmentRequest
     protected $_name = 'CancelPendingShipmentRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return CancelPendingShipmentRequest
@@ -66,12 +66,12 @@ class CancelPendingShipmentRequest
     /**
      * 
      *
-     * @param string $TrackingNumber
+     * @param TrackingId $TrackingId
      * return CancelPendingShipmentRequest
      */
-    public function setTrackingNumber($trackingNumber)
+    public function setTrackingId(TrackingId $trackingId)
     {
-        $this->TrackingNumber = $trackingNumber;
+        $this->TrackingId = $trackingId;
         return $this;
     }
     

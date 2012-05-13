@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Format of shipping documents
+ * Specifies characteristics of a shipping document to be produced.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -64,7 +64,7 @@ class ShippingDocumentFormat
     }
     
     /**
-     * 
+     * For those shipping document types which have both a "form" and "instructions" component (e.g. NAFTA Certificate of Origin and General Agency Agreement), this field indicates whether to provide the instructions.
      *
      * @param boolean $ProvideInstructions
      * return ShippingDocumentFormat
@@ -72,6 +72,30 @@ class ShippingDocumentFormat
     public function setProvideInstructions($provideInstructions)
     {
         $this->ProvideInstructions = $provideInstructions;
+        return $this;
+    }
+    
+    /**
+     * Governs the language to be used for this individual document, independently from other content returned for the same shipment.
+     *
+     * @param Localization $Localization
+     * return ShippingDocumentFormat
+     */
+    public function setLocalization(Localization $localization)
+    {
+        $this->Localization = $localization;
+        return $this;
+    }
+    
+    /**
+     * Identifies the individual document specified by the client.
+     *
+     * @param string $CustomDocumentIdentifier
+     * return ShippingDocumentFormat
+     */
+    public function setCustomDocumentIdentifier($customDocumentIdentifier)
+    {
+        $this->CustomDocumentIdentifier = $customDocumentIdentifier;
         return $this;
     }
     

@@ -28,7 +28,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service business level. For this release this value should be set to 6.
+     * Identifies the service business level.
      *
      * @param int $Major
      * return VersionId
@@ -40,7 +40,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service interface level. For this release this value should be set to 0.
+     * Identifies the service interface level.
      *
      * @param int $Intermediate
      * return VersionId
@@ -52,7 +52,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service code level. For this release this value should be set to 0.
+     * Identifies the service code level.
      *
      * @param int $Minor
      * return VersionId

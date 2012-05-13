@@ -30,10 +30,10 @@ class ReturnEMailDetail
     /**
      * Identifies the allowed (merchant-authorized) special services which may be selected when the subsequent shipment is created. Only services represented in EMailLabelAllowedSpecialServiceType will be controlled by this list.
      *
-     * @param ReturnEMailAllowedSpecialServiceType $AllowedSpecialServices
+     * @param array[ReturnEMailAllowedSpecialServiceType] $AllowedSpecialServices
      * return ReturnEMailDetail
      */
-    public function setAllowedSpecialServices(\FedEx\RateService\SimpleType\ReturnEMailAllowedSpecialServiceType $allowedSpecialServices)
+    public function setAllowedSpecialServices(array $allowedSpecialServices)
     {
         $this->AllowedSpecialServices = $allowedSpecialServices;
         return $this;

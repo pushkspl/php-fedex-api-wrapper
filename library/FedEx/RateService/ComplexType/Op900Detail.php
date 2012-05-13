@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The instructions indicating how to print the OP-900 form for hazardous materials.
+ * The instructions indicating how to print the OP-900 form for hazardous materials packages.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * This element is currently not supported and is for the future use.
+ * The instructions indicating how to print the Commercial Invoice( e.g. image type) Specifies characteristics of a shipping document to be produced.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -28,7 +28,7 @@ class CommercialInvoiceDetail
     }
     
     /**
-     * ?
+     * Specifies the usage and identification of a customer supplied image to be used on this document.
      *
      * @param array[CustomerImageUsage] $CustomerImageUsages
      * return CommercialInvoiceDetail

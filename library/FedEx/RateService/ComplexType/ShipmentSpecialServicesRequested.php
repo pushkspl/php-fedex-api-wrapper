@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * Descriptive data regarding special services requested by the shipper for a shipment. If the shipper is requesting a special service which requires additional data (e.g. COD), the special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object. For example, to request COD, "COD" must be included in the SpecialServiceTypes collection and the CodDetail object must contain the required data.
+ * These special services are available at the shipment level for some or all service types. If the shipper is requesting a special service which requires additional data (such as the COD amount), the shipment special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class ShipmentSpecialServicesRequested
     protected $_name = 'ShipmentSpecialServicesRequested';
 
     /**
-     * Identifies the collection of special service types requested by the shipper. See SpecialServiceTypes for the list of valid enumerated types.
+     * The types of all special services requested for the enclosing shipment (or other shipment-level transaction).
      *
      * @param array[ShipmentSpecialServiceType] $SpecialServiceTypes
      * return ShipmentSpecialServicesRequested
@@ -36,18 +36,6 @@ class ShipmentSpecialServicesRequested
     public function setCodDetail(CodDetail $codDetail)
     {
         $this->CodDetail = $codDetail;
-        return $this;
-    }
-    
-    /**
-     * Descriptive data for the customer supplied COD collect amount. Data format for the amount element is two explicit deicmal positions (e.g. 5.00). For Express COD services only, for Ground COD services use the package level CodCollectionAmount
-     *
-     * @param Money $CodCollectionAmount
-     * return ShipmentSpecialServicesRequested
-     */
-    public function setCodCollectionAmount(Money $codCollectionAmount)
-    {
-        $this->CodCollectionAmount = $codCollectionAmount;
         return $this;
     }
     
@@ -88,7 +76,7 @@ class ShipmentSpecialServicesRequested
     }
     
     /**
-     * Details used while creating a pending shipment
+     * This field should be populated for pending shipments (e.g. e-mail label) It is required by a PENDING_SHIPMENT special service type.
      *
      * @param PendingShipmentDetail $PendingShipmentDetail
      * return ShipmentSpecialServicesRequested
@@ -156,6 +144,18 @@ class ShipmentSpecialServicesRequested
     public function setEtdDetail(EtdDetail $etdDetail)
     {
         $this->EtdDetail = $etdDetail;
+        return $this;
+    }
+    
+    /**
+     * Specification for date or range of dates on which delivery is to be attempted.
+     *
+     * @param CustomDeliveryWindowDetail $CustomDeliveryWindowDetail
+     * return ShipmentSpecialServicesRequested
+     */
+    public function setCustomDeliveryWindowDetail(CustomDeliveryWindowDetail $customDeliveryWindowDetail)
+    {
+        $this->CustomDeliveryWindowDetail = $customDeliveryWindowDetail;
         return $this;
     }
     

@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * The type of the tax.
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,6 +16,7 @@ class TaxType
     const _EXPORT = 'EXPORT';
     const _GST = 'GST';
     const _HST = 'HST';
+    const _INTRACOUNTRY = 'INTRACOUNTRY';
     const _OTHER = 'OTHER';
     const _PST = 'PST';
     const _VAT = 'VAT';

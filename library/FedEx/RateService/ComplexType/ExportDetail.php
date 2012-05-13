@@ -31,13 +31,7 @@ class ExportDetail
     }
     
     /**
-     * 
-                Required only if B13AFilingOption is one of the following:
-                FILED_ELECTRONICALLY
-                MANUALLY_ATTACHED
-                SUMMARY_REPORTING
-                If B13AFilingOption = NOT_REQUIRED, this field should contain a valid B13A Exception Number.
-              
+     * General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US).
      *
      * @param string $ExportComplianceStatement
      * return ExportDetail

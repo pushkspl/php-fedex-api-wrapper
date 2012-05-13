@@ -52,7 +52,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * Data to exclude from printing on the label.
+     * Controls which data/sections will be suppressed.
      *
      * @param array[LabelMaskableDataType] $MaskedData
      * return CustomerSpecifiedLabelDetail
@@ -60,6 +60,18 @@ class CustomerSpecifiedLabelDetail
     public function setMaskedData(array $maskedData)
     {
         $this->MaskedData = $maskedData;
+        return $this;
+    }
+    
+    /**
+     * For customers producing their own Ground labels, this field specifies which secondary barcode will be printed on the label; so that the primary barcode produced by FedEx has the corect SCNC.
+     *
+     * @param SecondaryBarcodeType $SecondaryBarcode
+     * return CustomerSpecifiedLabelDetail
+     */
+    public function setSecondaryBarcode(\FedEx\ShipService\SimpleType\SecondaryBarcodeType $secondaryBarcode)
+    {
+        $this->SecondaryBarcode = $secondaryBarcode;
         return $this;
     }
     
@@ -76,7 +88,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * 
+     * Controls the number of additional copies of supplemental labels.
      *
      * @param array[AdditionalLabelsDetail] $AdditionalLabels
      * return CustomerSpecifiedLabelDetail
@@ -88,7 +100,7 @@ class CustomerSpecifiedLabelDetail
     }
     
     /**
-     * 
+     * This value reduces the default quantity of destination/consignee air waybill labels. A value of zero indicates no change to default. A minimum of one copy will always be produced.
      *
      * @param nonNegativeInteger $AirWaybillSuppressionCount
      * return CustomerSpecifiedLabelDetail

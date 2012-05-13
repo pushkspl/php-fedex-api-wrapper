@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * Test for the Commercial Invoice. Note that Sold is not a valid Purpose for a Proforma Invoice.
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

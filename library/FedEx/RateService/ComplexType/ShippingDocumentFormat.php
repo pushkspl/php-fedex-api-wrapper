@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * Format of shipping documents
+ * Specifies characteristics of a shipping document to be produced.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

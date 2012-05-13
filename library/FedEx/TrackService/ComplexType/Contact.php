@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * 
+ * The descriptive data for a point-of-contact person.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class Contact
     protected $_name = 'Contact';
 
     /**
-     * Name of person.
+     * Identifies the contact person's name.
      *
      * @param string $PersonName
      * return Contact
@@ -28,7 +28,7 @@ class Contact
     }
     
     /**
-     * Title used by contact.
+     * Identifies the contact person's title.
      *
      * @param string $Title
      * return Contact
@@ -40,7 +40,7 @@ class Contact
     }
     
     /**
-     * Company name.
+     * Identifies the company this contact is associated with.
      *
      * @param string $CompanyName
      * return Contact
@@ -52,7 +52,7 @@ class Contact
     }
     
     /**
-     * Phone number of contact.
+     * Identifies the phone number associated with this contact.
      *
      * @param string $PhoneNumber
      * return Contact
@@ -64,7 +64,7 @@ class Contact
     }
     
     /**
-     * Phone extension of contact.
+     * Identifies the phone extension associated with this contact.
      *
      * @param string $PhoneExtension
      * return Contact
@@ -76,7 +76,7 @@ class Contact
     }
     
     /**
-     * Pager number of contact.
+     * Identifies the pager number associated with this contact.
      *
      * @param string $PagerNumber
      * return Contact
@@ -88,7 +88,7 @@ class Contact
     }
     
     /**
-     * Fax number of contact.
+     * Identifies the fax number associated with this contact.
      *
      * @param string $FaxNumber
      * return Contact
@@ -100,7 +100,7 @@ class Contact
     }
     
     /**
-     * Email address of contact.
+     * Identifies the email address associated with this contact.
      *
      * @param string $EMailAddress
      * return Contact

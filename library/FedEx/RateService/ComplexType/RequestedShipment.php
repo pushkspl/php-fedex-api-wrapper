@@ -208,14 +208,14 @@ class RequestedShipment
     }
     
     /**
-     * Information about this package that only applies to an international (export) shipment.
+     * Customs clearance data, used for both international and intra-country shipping.
      *
-     * @param InternationalDetail $InternationalDetail
+     * @param CustomsClearanceDetail $CustomsClearanceDetail
      * return RequestedShipment
      */
-    public function setInternationalDetail(InternationalDetail $internationalDetail)
+    public function setCustomsClearanceDetail(CustomsClearanceDetail $customsClearanceDetail)
     {
-        $this->InternationalDetail = $internationalDetail;
+        $this->CustomsClearanceDetail = $customsClearanceDetail;
         return $this;
     }
     
@@ -232,7 +232,7 @@ class RequestedShipment
     }
     
     /**
-     * 
+     * Specifies the characteristics of a shipment pertaining to SmartPost services.
      *
      * @param SmartPostShipmentDetail $SmartPostDetail
      * return RequestedShipment
@@ -268,7 +268,7 @@ class RequestedShipment
     }
     
     /**
-     * Details such as shipping document types, NAFTA information, CI information, and GAA information.
+     * Contains data used to create additional (non-label) shipping documents.
      *
      * @param ShippingDocumentSpecification $ShippingDocumentSpecification
      * return RequestedShipment
@@ -280,7 +280,7 @@ class RequestedShipment
     }
     
     /**
-     * Indicates the type of rates to be returned.
+     * Specifies whether and what kind of rates the customer wishes to have quoted on this shipment. The reply will also be constrained by other data on the shipment and customer.
      *
      * @param array[RateRequestType] $RateRequestTypes
      * return RequestedShipment
@@ -304,7 +304,7 @@ class RequestedShipment
     }
     
     /**
-     * For a multiple piece shipment this is the total number of packages in the shipment.
+     * The total number of packages in the entire shipment (even when the shipment spans multiple transactions.)
      *
      * @param nonNegativeInteger $PackageCount
      * return RequestedShipment
@@ -316,14 +316,14 @@ class RequestedShipment
     }
     
     /**
-     * Specifies whether packages are described individually, in groups, or summarized in a single description for total-piece-total-weight. This field controls which fields of the RequestedPackageLineItem will be used, and how many occurrences are expected.
+     * Specifies which package-level data values are provided at the shipment-level only. The package-level data values types specified here will not be provided at the package-level.
      *
-     * @param RequestedPackageDetailType $PackageDetail
+     * @param array[ShipmentOnlyFieldsType] $ShipmentOnlyFields
      * return RequestedShipment
      */
-    public function setPackageDetail(\FedEx\RateService\SimpleType\RequestedPackageDetailType $packageDetail)
+    public function setShipmentOnlyFields(array $shipmentOnlyFields)
     {
-        $this->PackageDetail = $packageDetail;
+        $this->ShipmentOnlyFields = $shipmentOnlyFields;
         return $this;
     }
     

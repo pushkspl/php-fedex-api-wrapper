@@ -16,7 +16,7 @@ class ExpressFreightDetailContact
     protected $_name = 'ExpressFreightDetailContact';
 
     /**
-     * Contact name.
+     * 
      *
      * @param string $Name
      * return ExpressFreightDetailContact
@@ -28,7 +28,7 @@ class ExpressFreightDetailContact
     }
     
     /**
-     * Contact phone number.
+     * 
      *
      * @param string $Phone
      * return ExpressFreightDetailContact

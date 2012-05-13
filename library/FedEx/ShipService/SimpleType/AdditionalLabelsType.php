@@ -17,6 +17,7 @@ class AdditionalLabelsType
     const _CONSIGNEE = 'CONSIGNEE';
     const _CUSTOMS = 'CUSTOMS';
     const _DESTINATION = 'DESTINATION';
+    const _FREIGHT_REFERENCE = 'FREIGHT_REFERENCE';
     const _MANIFEST = 'MANIFEST';
     const _ORIGIN = 'ORIGIN';
     const _RECIPIENT = 'RECIPIENT';

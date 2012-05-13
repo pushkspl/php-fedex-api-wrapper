@@ -36,7 +36,7 @@ class Request
         if (null != $wsdlPath) {
             $this->_wsdlPath = $wsdlPath;
         } else {
-            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'PackageMovementInformationService_v4.wsdl');
+            $this->_wsdlPath = realpath(dirname(dirname(__FILE__)) . \DIRECTORY_SEPARATOR . '_wsdl' . \DIRECTORY_SEPARATOR . 'PackageMovementInformationService_v5.wsdl');
         }
 
         $this->_soapClient = new \SoapClient($this->_wsdlPath, array('trace' => true));

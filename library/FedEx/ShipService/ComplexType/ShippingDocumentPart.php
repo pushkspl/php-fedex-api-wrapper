@@ -2,10 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
-            One or more document parts which make up a single logical document, such as
-            multiple pages of a single form.
-          
+ * A single part of a shipping document, such as one page of a multiple-page document whose format requires a separate image per page.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

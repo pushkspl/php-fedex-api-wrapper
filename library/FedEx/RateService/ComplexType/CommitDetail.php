@@ -52,6 +52,18 @@ class CommitDetail
     }
     
     /**
+     * Supporting detail for applied options identified in preceding field.
+     *
+     * @param ServiceSubOptionDetail $AppliedSubOptions
+     * return CommitDetail
+     */
+    public function setAppliedSubOptions(ServiceSubOptionDetail $appliedSubOptions)
+    {
+        $this->AppliedSubOptions = $appliedSubOptions;
+        return $this;
+    }
+    
+    /**
      * THe delivery commitment date/time. Express Only.
      *
      * @param dateTime $CommitTimestamp
@@ -76,7 +88,7 @@ class CommitDetail
     }
     
     /**
-     * The number of transit days. Ground and LTL Freight only.
+     * The number of transit days; applies to Ground and LTL Freight; indicates minimum transit time for SmartPost.
      *
      * @param TransitTimeType $TransitTime
      * return CommitDetail
@@ -84,6 +96,18 @@ class CommitDetail
     public function setTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $transitTime)
     {
         $this->TransitTime = $transitTime;
+        return $this;
+    }
+    
+    /**
+     * Maximum number of transit days, for SmartPost shipments.
+     *
+     * @param TransitTimeType $MaximumTransitTime
+     * return CommitDetail
+     */
+    public function setMaximumTransitTime(\FedEx\RateService\SimpleType\TransitTimeType $maximumTransitTime)
+    {
+        $this->MaximumTransitTime = $maximumTransitTime;
         return $this;
     }
     
@@ -220,6 +244,18 @@ class CommitDetail
     }
     
     /**
+     * 
+     *
+     * @param InternationalDocumentContentType $DocumentContent
+     * return CommitDetail
+     */
+    public function setDocumentContent(\FedEx\RateService\SimpleType\InternationalDocumentContentType $documentContent)
+    {
+        $this->DocumentContent = $documentContent;
+        return $this;
+    }
+    
+    /**
      * Required documentation for this shipment.
      *
      * @param array[RequiredShippingDocumentType] $RequiredDocuments
@@ -232,7 +268,7 @@ class CommitDetail
     }
     
     /**
-     * Only populated for Freight Requests
+     * Freight origin and destination city center information and total distance between origin and destination city centers.
      *
      * @param FreightCommitDetail $FreightCommitDetail
      * return CommitDetail

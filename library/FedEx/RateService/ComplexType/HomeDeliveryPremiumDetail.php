@@ -16,7 +16,7 @@ class HomeDeliveryPremiumDetail
     protected $_name = 'HomeDeliveryPremiumDetail';
 
     /**
-     * The type of Home Delivery Premium service being requested.
+     * 
      *
      * @param HomeDeliveryPremiumType $HomeDeliveryPremiumType
      * return HomeDeliveryPremiumDetail

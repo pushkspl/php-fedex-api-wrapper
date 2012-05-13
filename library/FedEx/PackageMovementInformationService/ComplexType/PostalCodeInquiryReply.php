@@ -88,7 +88,7 @@ class PostalCodeInquiryReply
     }
     
     /**
-     * Postal code service area description for Express Freight.
+     * Only service area field is currently provided for Express Freight.
      *
      * @param PostalCodeServiceAreaDescription $ExpressFreightDescription
      * return PostalCodeInquiryReply

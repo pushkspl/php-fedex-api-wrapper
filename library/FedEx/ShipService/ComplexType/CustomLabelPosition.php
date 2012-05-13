@@ -16,7 +16,7 @@ class CustomLabelPosition
     protected $_name = 'CustomLabelPosition';
 
     /**
-     * 
+     * Horizontal position, relative to left edge of custom area.
      *
      * @param nonNegativeInteger $X
      * return CustomLabelPosition
@@ -28,7 +28,7 @@ class CustomLabelPosition
     }
     
     /**
-     * 
+     * Vertical position, relative to top edge of custom area.
      *
      * @param nonNegativeInteger $Y
      * return CustomLabelPosition

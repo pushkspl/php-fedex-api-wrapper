@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- *  Specifies the type of paper (stock) on which a document will be printed.
+ * Specifies the type of paper (stock) on which a document will be printed.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -13,8 +13,8 @@ namespace FedEx\ShipService\SimpleType;
 class ShippingDocumentStockType
     extends AbstractSimpleType
 {
-    const _OP_900_LG = 'OP_900_LG';
-    const _OP_900_LL = 'OP_900_LL';
+    const _OP_900_LG_B = 'OP_900_LG_B';
+    const _OP_900_LL_B = 'OP_900_LL_B';
     const _OP_950 = 'OP_950';
     const _PAPER_4X6 = 'PAPER_4X6';
     const _PAPER_LETTER = 'PAPER_LETTER';

@@ -13,7 +13,9 @@ namespace FedEx\RateService\SimpleType;
 class PackageSpecialServiceType
     extends AbstractSimpleType
 {
+    const _ALCOHOL = 'ALCOHOL';
     const _APPOINTMENT_DELIVERY = 'APPOINTMENT_DELIVERY';
+    const _COD = 'COD';
     const _DANGEROUS_GOODS = 'DANGEROUS_GOODS';
     const _DRY_ICE = 'DRY_ICE';
     const _NON_STANDARD_CONTAINER = 'NON_STANDARD_CONTAINER';

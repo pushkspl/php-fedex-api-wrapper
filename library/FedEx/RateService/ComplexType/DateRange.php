@@ -16,7 +16,7 @@ class DateRange
     protected $_name = 'DateRange';
 
     /**
-     * The beginning date in a date range.
+     * 
      *
      * @param date $Begins
      * return DateRange
@@ -28,7 +28,7 @@ class DateRange
     }
     
     /**
-     * The end date in a date range.
+     * 
      *
      * @param date $Ends
      * return DateRange

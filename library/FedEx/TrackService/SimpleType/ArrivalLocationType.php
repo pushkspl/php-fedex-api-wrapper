@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\SimpleType;
 
 /**
- * Not available at this time.
+ * Identifies where a tracking event occurs.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

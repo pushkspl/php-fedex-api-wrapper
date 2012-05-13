@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Specifies additional labels to be produced. All required labels for shipments will be produced without the need to request additional labels. These are only available as thermal labels.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class AdditionalLabelsDetail
     protected $_name = 'AdditionalLabelsDetail';
 
     /**
-     * 
+     * The type of additional labels to return.
      *
      * @param AdditionalLabelsType $Type
      * return AdditionalLabelsDetail
@@ -28,7 +28,7 @@ class AdditionalLabelsDetail
     }
     
     /**
-     * 
+     * The number of this type label to return
      *
      * @param nonNegativeInteger $Count
      * return AdditionalLabelsDetail

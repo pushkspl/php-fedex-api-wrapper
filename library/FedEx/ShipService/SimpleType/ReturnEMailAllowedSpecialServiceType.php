@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- * Describes the special services the merchant will allow on a return shipment.
+ * These values are used to control the availability of certain special services at the time when a customer uses the e-mail label link to create a return shipment.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

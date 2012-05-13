@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The number of packages with dry ice and the total weight of the dry ice.
+ * Shipment-level totals of dry ice data across all packages.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class ShipmentDryIceDetail
     protected $_name = 'ShipmentDryIceDetail';
 
     /**
-     * The number of packages in this shipment that contain dry ice.
+     * Total number of packages in the shipment that contain dry ice.
      *
      * @param nonNegativeInteger $PackageCount
      * return ShipmentDryIceDetail
@@ -28,7 +28,7 @@ class ShipmentDryIceDetail
     }
     
     /**
-     * The total weight of the dry ice in this shipment.
+     * Total shipment dry ice weight for all packages.
      *
      * @param Weight $TotalWeight
      * return ShipmentDryIceDetail

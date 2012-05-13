@@ -14,8 +14,8 @@ class RateDiscountType
     extends AbstractSimpleType
 {
     const _BONUS = 'BONUS';
+    const _COUPON = 'COUPON';
     const _EARNED = 'EARNED';
     const _OTHER = 'OTHER';
     const _VOLUME = 'VOLUME';
-    const _COUPON = 'COUPON';
 }

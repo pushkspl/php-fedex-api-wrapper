@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * The instructions indicating how to print the Certificate of Origin ( e.g. whether or not to include the instructions, image type, etc ...)
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class CertificateOfOriginDetail
     protected $_name = 'CertificateOfOriginDetail';
 
     /**
-     * ?
+     * Specifies characteristics of a shipping document to be produced.
      *
      * @param ShippingDocumentFormat $DocumentFormat
      * return CertificateOfOriginDetail
@@ -28,7 +28,7 @@ class CertificateOfOriginDetail
     }
     
     /**
-     * ?
+     * Specifies the usage and identification of customer supplied images to be used on this document.
      *
      * @param array[CustomerImageUsage] $CustomerImageUsages
      * return CertificateOfOriginDetail

@@ -18,10 +18,10 @@ class Dimensions
     /**
      * 
      *
-     * @param  $Length
+     * @param nonNegativeInteger $Length
      * return Dimensions
      */
-    public function setLength( $length)
+    public function setLength($length)
     {
         $this->Length = $length;
         return $this;
@@ -30,10 +30,10 @@ class Dimensions
     /**
      * 
      *
-     * @param  $Width
+     * @param nonNegativeInteger $Width
      * return Dimensions
      */
-    public function setWidth( $width)
+    public function setWidth($width)
     {
         $this->Width = $width;
         return $this;
@@ -42,10 +42,10 @@ class Dimensions
     /**
      * 
      *
-     * @param  $Height
+     * @param nonNegativeInteger $Height
      * return Dimensions
      */
-    public function setHeight( $height)
+    public function setHeight($height)
     {
         $this->Height = $height;
         return $this;

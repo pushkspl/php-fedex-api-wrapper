@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * Returned for cargo shipments only when they are currently split across vehicles.
+ * Used when a cargo shipment is split across vehicles. This is used to give the status of each part of the shipment.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,9 +16,9 @@ class TrackSplitShipmentPart
     protected $_name = 'TrackSplitShipmentPart';
 
     /**
-     * Number of pieces/skids traveling together.
+     * The number of pieces in this part.
      *
-     * @param int $PieceCount
+     * @param positiveInteger $PieceCount
      * return TrackSplitShipmentPart
      */
     public function setPieceCount($pieceCount)
@@ -28,7 +28,7 @@ class TrackSplitShipmentPart
     }
     
     /**
-     * Time this package was delivered.
+     * The date and time this status began.
      *
      * @param dateTime $Timestamp
      * return TrackSplitShipmentPart
@@ -40,7 +40,7 @@ class TrackSplitShipmentPart
     }
     
     /**
-     * The most recent status code for this specific split.
+     * A code that identifies this type of status.
      *
      * @param string $StatusCode
      * return TrackSplitShipmentPart
@@ -52,7 +52,7 @@ class TrackSplitShipmentPart
     }
     
     /**
-     * The most recent status description for a specific split.
+     * A human-readable description of this status.
      *
      * @param string $StatusDescription
      * return TrackSplitShipmentPart

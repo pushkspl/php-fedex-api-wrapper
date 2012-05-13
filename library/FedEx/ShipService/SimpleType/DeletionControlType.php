@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- * Valid values for DeletionControlType
+ * Specifies the type of deletion to be performed on a shipment.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

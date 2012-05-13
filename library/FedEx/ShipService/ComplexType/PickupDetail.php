@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * This class describes the pickup characteristics of a shipment (e.g. for use in a tag request).
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

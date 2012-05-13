@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * 
+ * Information describing email notifications that will be sent in relation to events that occur during package movement
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EMailNotificationDetail
     protected $_name = 'EMailNotificationDetail';
 
     /**
-     * Personal messages are not applicable with wireless formatted notifications. UTF-8 encoded message.
+     * A message that will be included in the email notifications
      *
      * @param string $PersonalMessage
      * return EMailNotificationDetail
@@ -28,7 +28,7 @@ class EMailNotificationDetail
     }
     
     /**
-     * Currently up to a maximum of 6 email combinations are supported.
+     * Information describing the destination of the email, format of the email and events to be notified on
      *
      * @param array[EMailNotificationRecipient] $Recipients
      * return EMailNotificationDetail

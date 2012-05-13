@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EdtTaxDetail
     protected $_name = 'EdtTaxDetail';
 
     /**
-     * ?
+     * 
      *
      * @param EdtTaxType $TaxType
      * return EdtTaxDetail
@@ -28,7 +28,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param date $EffectiveDate
      * return EdtTaxDetail
@@ -40,7 +40,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $Name
      * return EdtTaxDetail
@@ -52,7 +52,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param Money $TaxableValue
      * return EdtTaxDetail
@@ -64,7 +64,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $Description
      * return EdtTaxDetail
@@ -76,7 +76,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $Formula
      * return EdtTaxDetail
@@ -88,7 +88,7 @@ class EdtTaxDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param Money $Amount
      * return EdtTaxDetail

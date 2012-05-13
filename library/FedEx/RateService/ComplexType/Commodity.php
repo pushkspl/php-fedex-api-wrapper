@@ -208,9 +208,7 @@ class Commodity
     }
     
     /**
-     * 
-                All data required for this commodity in NAFTA Certificate of Origin.
-              
+     * All data required for this commodity in NAFTA Certificate of Origin.
      *
      * @param NaftaCommodityDetail $NaftaDetail
      * return Commodity

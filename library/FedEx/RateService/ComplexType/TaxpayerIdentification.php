@@ -39,6 +39,18 @@ class TaxpayerIdentification
         return $this;
     }
     
+    /**
+     * Identifies the usage of Tax Identification Number in Shipment processing
+     *
+     * @param string $Usage
+     * return TaxpayerIdentification
+     */
+    public function setUsage($usage)
+    {
+        $this->Usage = $usage;
+        return $this;
+    }
+    
 
     
 }

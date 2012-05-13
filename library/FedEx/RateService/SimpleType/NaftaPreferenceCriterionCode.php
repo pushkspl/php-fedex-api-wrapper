@@ -2,9 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * 
-            See instructions for NAFTA Certificate of Origin for code definitions.
-          
+ * See instructions for NAFTA Certificate of Origin for code definitions.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

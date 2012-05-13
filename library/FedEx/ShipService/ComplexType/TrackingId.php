@@ -40,6 +40,18 @@ class TrackingId
     }
     
     /**
+     * For use with SmartPost tracking IDs only
+     *
+     * @param string $UspsApplicationId
+     * return TrackingId
+     */
+    public function setUspsApplicationId($uspsApplicationId)
+    {
+        $this->UspsApplicationId = $uspsApplicationId;
+        return $this;
+    }
+    
+    /**
      * 
      *
      * @param string $TrackingNumber

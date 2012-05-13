@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * The descriptive data regarding the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+ * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

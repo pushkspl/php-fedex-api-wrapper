@@ -40,7 +40,7 @@ class ShippingDocument
     }
     
     /**
-     * ?
+     * 
      *
      * @param ShippingDocumentDispositionType $ShippingDocumentDisposition
      * return ShippingDocument
@@ -76,9 +76,9 @@ class ShippingDocument
     }
     
     /**
-     * Number of copies to print.
+     * Can be zero for documents whose disposition implies that no content is included.
      *
-     * @param positiveInteger $CopiesToPrint
+     * @param nonNegativeInteger $CopiesToPrint
      * return ShippingDocument
      */
     public function setCopiesToPrint($copiesToPrint)

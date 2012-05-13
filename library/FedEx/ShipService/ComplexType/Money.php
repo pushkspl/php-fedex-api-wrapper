@@ -30,10 +30,10 @@ class Money
     /**
      * Identifies the monetary amount.
      *
-     * @param  $Amount
+     * @param decimal $Amount
      * return Money
      */
-    public function setAmount( $amount)
+    public function setAmount($amount)
     {
         $this->Amount = $amount;
         return $this;

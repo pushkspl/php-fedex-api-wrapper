@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * Identifies the type of dim divisor that was applied.
+ * Indicates the reason that a dim divisor value was chose.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

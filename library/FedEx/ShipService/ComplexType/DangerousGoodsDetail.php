@@ -87,6 +87,18 @@ class DangerousGoodsDetail
         return $this;
     }
     
+    /**
+     * Offeror's name or contract number, per DOT regulation.
+     *
+     * @param string $Offeror
+     * return DangerousGoodsDetail
+     */
+    public function setOfferor($offeror)
+    {
+        $this->Offeror = $offeror;
+        return $this;
+    }
+    
 
     
 }

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * This element is currently not supported and is for the future use. (The descriptive data regarding NAFTA COO.)
+ * Data required to produce a Certificate of Origin document. Remaining content (business data) to be defined once requirements have been completed.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -52,7 +52,7 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * 
+     * Contact information for "Authorized Signature" area of form.
      *
      * @param Contact $SignatureContact
      * return NaftaCertificateOfOriginDetail
@@ -88,7 +88,7 @@ class NaftaCertificateOfOriginDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param array[CustomerImageUsage] $CustomerImageUsages
      * return NaftaCertificateOfOriginDetail

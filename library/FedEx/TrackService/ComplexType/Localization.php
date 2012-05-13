@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * The descriptive data for the local language and locale (i.e. country).
+ * Identifies the representation of human-readable text.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class Localization
     protected $_name = 'Localization';
 
     /**
-     * Identifies the language to use for human-readable messages.
+     * Two-letter code for language (e.g. EN, FR, etc.)
      *
      * @param string $LanguageCode
      * return Localization
@@ -28,7 +28,7 @@ class Localization
     }
     
     /**
-     * Identifies the locale (i.e.  country code).
+     * Two-letter code for the region (e.g. us, ca, etc..).
      *
      * @param string $LocaleCode
      * return Localization

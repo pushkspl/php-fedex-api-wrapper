@@ -16,7 +16,7 @@ class ProcessShipmentRequest
     protected $_name = 'ProcessShipmentRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return ProcessShipmentRequest

@@ -16,6 +16,6 @@ class MinimumChargeType
     const _CUSTOMER = 'CUSTOMER';
     const _CUSTOMER_FREIGHT_WEIGHT = 'CUSTOMER_FREIGHT_WEIGHT';
     const _EARNED_DISCOUNT = 'EARNED_DISCOUNT';
-    const _RATE_SCALE = 'RATE_SCALE';
     const _MIXED = 'MIXED';
+    const _RATE_SCALE = 'RATE_SCALE';
 }

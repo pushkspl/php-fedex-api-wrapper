@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EdtCommodityTax
     protected $_name = 'EdtCommodityTax';
 
     /**
-     * ?
+     * 
      *
      * @param string $HarmonizedCode
      * return EdtCommodityTax
@@ -28,7 +28,7 @@ class EdtCommodityTax
     }
     
     /**
-     * ?
+     * 
      *
      * @param array[EdtTaxDetail] $Taxes
      * return EdtCommodityTax

@@ -16,7 +16,7 @@ class HoldAtLocationDetail
     protected $_name = 'HoldAtLocationDetail';
 
     /**
-     * Identifies a telephone number.
+     * Contact phone number for recipient of shipment.
      *
      * @param string $PhoneNumber
      * return HoldAtLocationDetail
@@ -28,14 +28,50 @@ class HoldAtLocationDetail
     }
     
     /**
-     * The descriptive data for a physical location.
+     * Contact and address of FedEx facility at which shipment is to be held.
      *
-     * @param Address $Address
+     * @param ContactAndAddress $LocationContactAndAddress
      * return HoldAtLocationDetail
      */
-    public function setAddress(Address $address)
+    public function setLocationContactAndAddress(ContactAndAddress $locationContactAndAddress)
     {
-        $this->Address = $address;
+        $this->LocationContactAndAddress = $locationContactAndAddress;
+        return $this;
+    }
+    
+    /**
+     * Type of facility at which package/shipment is to be held.
+     *
+     * @param FedExLocationType $LocationType
+     * return HoldAtLocationDetail
+     */
+    public function setLocationType(\FedEx\RateService\SimpleType\FedExLocationType $locationType)
+    {
+        $this->LocationType = $locationType;
+        return $this;
+    }
+    
+    /**
+     * Location identification (for facilities identified by an alphanumeric location code).
+     *
+     * @param string $LocationId
+     * return HoldAtLocationDetail
+     */
+    public function setLocationId($locationId)
+    {
+        $this->LocationId = $locationId;
+        return $this;
+    }
+    
+    /**
+     * Location identification (for facilities identified by an numeric location code).
+     *
+     * @param int $LocationNumber
+     * return HoldAtLocationDetail
+     */
+    public function setLocationNumber($locationNumber)
+    {
+        $this->LocationNumber = $locationNumber;
         return $this;
     }
     

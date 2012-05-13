@@ -76,19 +76,19 @@ class CompletedShipmentDetail
     }
     
     /**
-     * Information about the routing, origin, destination and delivery of a shipment.
+     * 
      *
-     * @param ShipmentRoutingDetail $RoutingDetail
+     * @param ShipmentOperationalDetail $OperationalDetail
      * return CompletedShipmentDetail
      */
-    public function setRoutingDetail(ShipmentRoutingDetail $routingDetail)
+    public function setOperationalDetail(ShipmentOperationalDetail $operationalDetail)
     {
-        $this->RoutingDetail = $routingDetail;
+        $this->OperationalDetail = $operationalDetail;
         return $this;
     }
     
     /**
-     * Access Details about PendingShipment information.
+     * Only used with pending shipments.
      *
      * @param PendingShipmentAccessDetail $AccessDetail
      * return CompletedShipmentDetail
@@ -124,7 +124,7 @@ class CompletedShipmentDetail
     }
     
     /**
-     * The rating information for this shipment. Note, this is a courtesy rate and may be different from what is invoiced.
+     * All shipment-level rating data for this shipment, which may include data for multiple rate types.
      *
      * @param ShipmentRating $ShipmentRating
      * return CompletedShipmentDetail
@@ -148,6 +148,18 @@ class CompletedShipmentDetail
     }
     
     /**
+     * Returns the default holding location information when HOLD_AT_LOCATION special service is requested and the client does not specify the hold location address.
+     *
+     * @param CompletedHoldAtLocationDetail $CompletedHoldAtLocationDetail
+     * return CompletedShipmentDetail
+     */
+    public function setCompletedHoldAtLocationDetail(CompletedHoldAtLocationDetail $completedHoldAtLocationDetail)
+    {
+        $this->CompletedHoldAtLocationDetail = $completedHoldAtLocationDetail;
+        return $this;
+    }
+    
+    /**
      * Indicates whether or not this shipment is eligible for a money back guarantee.
      *
      * @param boolean $IneligibleForMoneyBackGuarantee
@@ -160,7 +172,7 @@ class CompletedShipmentDetail
     }
     
     /**
-     * General field for exporting-country-specific export data (e.g. B13A for CA, FTSR Exemption or AES Citation for US.
+     * Returns any defaults or updates applied to RequestedShipment.exportDetail.exportComplianceStatement.
      *
      * @param string $ExportComplianceStatement
      * return CompletedShipmentDetail

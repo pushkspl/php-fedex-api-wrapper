@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class UploadDocumentReferenceDetail
     protected $_name = 'UploadDocumentReferenceDetail';
 
     /**
-     * ?
+     * 
      *
      * @param nonNegativeInteger $LineNumber
      * return UploadDocumentReferenceDetail
@@ -28,7 +28,7 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $CustomerReference
      * return UploadDocumentReferenceDetail
@@ -40,7 +40,7 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param UploadDocumentProducerType $DocumentProducer
      * return UploadDocumentReferenceDetail
@@ -52,7 +52,7 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param UploadDocumentType $DocumentType
      * return UploadDocumentReferenceDetail
@@ -64,7 +64,7 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $DocumentId
      * return UploadDocumentReferenceDetail
@@ -76,7 +76,7 @@ class UploadDocumentReferenceDetail
     }
     
     /**
-     * ?
+     * 
      *
      * @param UploadDocumentIdProducer $DocumentIdProducer
      * return UploadDocumentReferenceDetail

@@ -14,6 +14,8 @@ class TrackingIdType
     extends AbstractSimpleType
 {
     const _EXPRESS = 'EXPRESS';
+    const _FEDEX = 'FEDEX';
+    const _FREIGHT = 'FREIGHT';
     const _GROUND = 'GROUND';
     const _USPS = 'USPS';
 }

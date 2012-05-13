@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Descriptive data for FedEx pending shipment
+ * This information describes how and when a pending shipment may be accessed for completion.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class PendingShipmentAccessDetail
     protected $_name = 'PendingShipmentAccessDetail';
 
     /**
-     * Provides the url for accessing email label.
+     * Only for pending shipment type of "EMAIL"
      *
      * @param string $EmailLabelUrl
      * return PendingShipmentAccessDetail
@@ -28,7 +28,7 @@ class PendingShipmentAccessDetail
     }
     
     /**
-     * User id.
+     * Only for pending shipment type of "EMAIL"
      *
      * @param string $UserId
      * return PendingShipmentAccessDetail
@@ -40,7 +40,7 @@ class PendingShipmentAccessDetail
     }
     
     /**
-     * Password.
+     * Only for pending shipment type of "EMAIL"
      *
      * @param string $Password
      * return PendingShipmentAccessDetail

@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Constructed string, based on format and zero or more data fields, printed in specified barcode symbology.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -64,7 +64,7 @@ class CustomLabelBarcodeEntry
     }
     
     /**
-     * 
+     * Width of thinnest bar/space element in the barcode.
      *
      * @param int $ThinBarWidth
      * return CustomLabelBarcodeEntry

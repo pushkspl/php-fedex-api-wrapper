@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * The descriptive data identifying the client submitting the transaction.
+ * Descriptive data for the client submitting a transaction.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class ClientDetail
     protected $_name = 'ClientDetail';
 
     /**
-     * The FedEx account number assigned to the customer initiating the request.
+     * The FedEx account number associated with this transaction.
      *
      * @param string $AccountNumber
      * return ClientDetail
@@ -28,7 +28,7 @@ class ClientDetail
     }
     
     /**
-     * Identifies the unique client device submitting the request. This number is assigned by FedEx and identifies the unique device from which the request is originating.
+     * This number is assigned by FedEx and identifies the unique device from which the request is originating
      *
      * @param string $MeterNumber
      * return ClientDetail
@@ -40,7 +40,7 @@ class ClientDetail
     }
     
     /**
-     * 
+     * Only used in transactions which require identification of the Fed Ex Office integrator.
      *
      * @param string $IntegratorId
      * return ClientDetail
@@ -52,7 +52,7 @@ class ClientDetail
     }
     
     /**
-     * Governs any future language/translations used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
+     * The language to be used for human-readable Notification.localizedMessages in responses to the request containing this ClientDetail object. Different requests from the same client may contain different Localization data. (Contrast with TransactionDetail.localization, which governs data payload language/translation.)
      *
      * @param Localization $Localization
      * return ClientDetail

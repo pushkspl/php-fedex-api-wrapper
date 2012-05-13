@@ -16,7 +16,7 @@ class PostalCodeInquiryRequest
     protected $_name = 'PostalCodeInquiryRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return PostalCodeInquiryRequest
@@ -64,19 +64,7 @@ class PostalCodeInquiryRequest
     }
     
     /**
-     * Identifies the carrier code type.
-     *
-     * @param CarrierCodeType $CarrierCode
-     * return PostalCodeInquiryRequest
-     */
-    public function setCarrierCode(\FedEx\PackageMovementInformationService\SimpleType\CarrierCodeType $carrierCode)
-    {
-        $this->CarrierCode = $carrierCode;
-        return $this;
-    }
-    
-    /**
-     * Identifies the postal code. Required if CountryCode is US or CA.
+     * Only used with postal-aware countries.
      *
      * @param string $PostalCode
      * return PostalCodeInquiryRequest

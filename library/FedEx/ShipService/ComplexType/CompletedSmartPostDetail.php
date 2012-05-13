@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Provides reply information specific to SmartPost shipments.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class CompletedSmartPostDetail
     protected $_name = 'CompletedSmartPostDetail';
 
     /**
-     * 
+     * Identifies the carrier that will pick up the SmartPost shipment.
      *
      * @param CarrierCodeType $PickUpCarrier
      * return CompletedSmartPostDetail
@@ -28,7 +28,7 @@ class CompletedSmartPostDetail
     }
     
     /**
-     * 
+     * Indicates whether the shipment is deemed to be machineable, based on dimensions, weight, and packaging.
      *
      * @param boolean $Machinable
      * return CompletedSmartPostDetail

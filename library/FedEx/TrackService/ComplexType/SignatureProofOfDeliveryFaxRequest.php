@@ -16,7 +16,7 @@ class SignatureProofOfDeliveryFaxRequest
     protected $_name = 'SignatureProofOfDeliveryFaxRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return SignatureProofOfDeliveryFaxRequest
@@ -28,7 +28,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $ClientDetail
      * return SignatureProofOfDeliveryFaxRequest
@@ -40,7 +40,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations.
      *
      * @param TransactionDetail $TransactionDetail
      * return SignatureProofOfDeliveryFaxRequest
@@ -52,7 +52,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * The version of the request being used.
      *
      * @param VersionId $Version
      * return SignatureProofOfDeliveryFaxRequest
@@ -76,7 +76,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * More information.
+     * Additional customer-supplied text to be added to the body of the letter.
      *
      * @param string $AdditionalComments
      * return SignatureProofOfDeliveryFaxRequest
@@ -88,7 +88,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * 
+     * Contact and address information about the person requesting the fax to be sent.
      *
      * @param ContactAndAddress $FaxSender
      * return SignatureProofOfDeliveryFaxRequest
@@ -100,7 +100,7 @@ class SignatureProofOfDeliveryFaxRequest
     }
     
     /**
-     * Identifies the recipient's fax details.
+     * Contact and address information, including the fax number, about the person to receive the fax.
      *
      * @param ContactAndAddress $FaxRecipient
      * return SignatureProofOfDeliveryFaxRequest

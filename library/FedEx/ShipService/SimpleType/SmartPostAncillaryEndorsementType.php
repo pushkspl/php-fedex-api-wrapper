@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\SimpleType;
 
 /**
- * 
+ * These values are mutually exclusive; at most one of them can be attached to a SmartPost shipment.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

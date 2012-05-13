@@ -16,7 +16,7 @@ class CurrencyExchangeRate
     protected $_name = 'CurrencyExchangeRate';
 
     /**
-     * The currency type being converted from.
+     * The currency code for the original (converted FROM) currency.
      *
      * @param string $FromCurrency
      * return CurrencyExchangeRate
@@ -28,7 +28,7 @@ class CurrencyExchangeRate
     }
     
     /**
-     * The currency type being converted to.
+     * The currency code for the final (converted INTO) currency.
      *
      * @param string $IntoCurrency
      * return CurrencyExchangeRate
@@ -40,7 +40,7 @@ class CurrencyExchangeRate
     }
     
     /**
-     * The resulting amount.
+     * Multiplier used to convert fromCurrency units to intoCurrency units.
      *
      * @param decimal $Rate
      * return CurrencyExchangeRate

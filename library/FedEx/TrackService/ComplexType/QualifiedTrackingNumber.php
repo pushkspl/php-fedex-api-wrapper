@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * 
+ * Tracking number and additional shipment data used to identify a unique shipment for proof of delivery.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class QualifiedTrackingNumber
     protected $_name = 'QualifiedTrackingNumber';
 
     /**
-     * Tracking number of package.
+     * FedEx assigned identifier for a package/shipment.
      *
      * @param string $TrackingNumber
      * return QualifiedTrackingNumber
@@ -28,7 +28,7 @@ class QualifiedTrackingNumber
     }
     
     /**
-     * Date on which package was tendered to FedEx.
+     * The date the package was shipped.
      *
      * @param date $ShipDate
      * return QualifiedTrackingNumber
@@ -40,7 +40,7 @@ class QualifiedTrackingNumber
     }
     
     /**
-     * Account number associated with shipment (as opposed to account number in ClientDetail, which is that of party sending request).
+     * If the account number used to ship the package is provided in the request the shipper and recipient information is included on the letter or fax.
      *
      * @param string $AccountNumber
      * return QualifiedTrackingNumber
@@ -52,7 +52,7 @@ class QualifiedTrackingNumber
     }
     
     /**
-     * 
+     * FedEx operating company that delivered the package.
      *
      * @param CarrierCodeType $Carrier
      * return QualifiedTrackingNumber
@@ -64,7 +64,7 @@ class QualifiedTrackingNumber
     }
     
     /**
-     * 
+     * Only country is used for elimination of duplicate tracking numbers.
      *
      * @param Address $Destination
      * return QualifiedTrackingNumber

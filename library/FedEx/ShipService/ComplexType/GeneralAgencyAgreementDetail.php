@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * This element is currently not supported and is for the future use.
+ * Data required to produce a General Agency Agreement document. Remaining content (business data) to be defined once requirements have been completed.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The descriptive data for the medium of exchange for FedEx services.
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class Money
     protected $_name = 'Money';
 
     /**
-     * Identifies the currency of the monetary amount.
+     * 
      *
      * @param string $Currency
      * return Money
@@ -28,12 +28,12 @@ class Money
     }
     
     /**
-     * Identifies the monetary amount.
+     * 
      *
-     * @param  $Amount
+     * @param decimal $Amount
      * return Money
      */
-    public function setAmount( $amount)
+    public function setAmount($amount)
     {
         $this->Amount = $amount;
         return $this;

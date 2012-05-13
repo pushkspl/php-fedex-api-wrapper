@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class Measure
     protected $_name = 'Measure';
 
     /**
-     * ?
+     * 
      *
      * @param decimal $Quantity
      * return Measure
@@ -28,7 +28,7 @@ class Measure
     }
     
     /**
-     * ?
+     * 
      *
      * @param string $Units
      * return Measure

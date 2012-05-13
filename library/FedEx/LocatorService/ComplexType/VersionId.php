@@ -16,7 +16,7 @@ class VersionId
     protected $_name = 'VersionId';
 
     /**
-     * Identifies a system or sub-system which performs an operation.
+     * Fixed value.
      *
      * @param string $ServiceId
      * return VersionId
@@ -28,7 +28,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service business level. For the initial FedEx Web Service release this value should be set to 1.
+     * Fixed value.
      *
      * @param int $Major
      * return VersionId
@@ -40,7 +40,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service interface level. For the initial FedEx Web Service release this value should be set to 0.
+     * Fixed value.
      *
      * @param int $Intermediate
      * return VersionId
@@ -52,7 +52,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service code level. For the initial FedEx Web Service release this value should be set to 0.
+     * Fixed value.
      *
      * @param int $Minor
      * return VersionId

@@ -16,7 +16,7 @@ class RatedShipmentDetail
     protected $_name = 'RatedShipmentDetail';
 
     /**
-     * The difference between account based rates and list rates. Only returned when list rates are requested.
+     * The difference between "list" and "account" total net charge.
      *
      * @param Money $EffectiveNetDiscount
      * return RatedShipmentDetail
@@ -28,7 +28,7 @@ class RatedShipmentDetail
     }
     
     /**
-     * Ground COD is package level.
+     * Express COD is shipment level.
      *
      * @param Money $AdjustedCodCollectionAmount
      * return RatedShipmentDetail

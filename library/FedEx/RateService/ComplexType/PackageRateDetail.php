@@ -16,7 +16,7 @@ class PackageRateDetail
     protected $_name = 'PackageRateDetail';
 
     /**
-     * The type of rates this information contains either account based or list rates.
+     * Type used for this specific set of rate data.
      *
      * @param ReturnedRateType $RateType
      * return PackageRateDetail
@@ -28,7 +28,7 @@ class PackageRateDetail
     }
     
     /**
-     * The method used to calculate the weight to be used in rating the package..
+     * Indicates which weight was used.
      *
      * @param RatedWeightMethod $RatedWeightMethod
      * return PackageRateDetail
@@ -40,7 +40,7 @@ class PackageRateDetail
     }
     
     /**
-     * Internal FedEx use only.
+     * INTERNAL FEDEX USE ONLY.
      *
      * @param MinimumChargeType $MinimumChargeType
      * return PackageRateDetail
@@ -64,7 +64,7 @@ class PackageRateDetail
     }
     
     /**
-     * The dimensional weight that was calculated for this package.
+     * The dimensional weight of this package (if greater than actual).
      *
      * @param Weight $DimWeight
      * return PackageRateDetail
@@ -76,7 +76,7 @@ class PackageRateDetail
     }
     
     /**
-     * The oversize weight that was used in the rate calculation.
+     * The oversize weight of this package (if the package is oversize).
      *
      * @param Weight $OversizeWeight
      * return PackageRateDetail
@@ -88,7 +88,7 @@ class PackageRateDetail
     }
     
     /**
-     * The freight charge that was calculated for this package before surcharges, discounts and taxes..
+     * The transportation charge only (prior to any discounts applied) for this package.
      *
      * @param Money $BaseCharge
      * return PackageRateDetail
@@ -100,7 +100,7 @@ class PackageRateDetail
     }
     
     /**
-     * The total discounts used in the rate calculation.
+     * The sum of all discounts on this package.
      *
      * @param Money $TotalFreightDiscounts
      * return PackageRateDetail
@@ -112,7 +112,7 @@ class PackageRateDetail
     }
     
     /**
-     * The base charge minus discounts. 
+     * This package's baseCharge - totalFreightDiscounts.
      *
      * @param Money $NetFreight
      * return PackageRateDetail
@@ -124,7 +124,7 @@ class PackageRateDetail
     }
     
     /**
-     * The total amount of all surcharges applied to this package.
+     * The sum of all surcharges on this package.
      *
      * @param Money $TotalSurcharges
      * return PackageRateDetail
@@ -148,7 +148,7 @@ class PackageRateDetail
     }
     
     /**
-     * The total amount of all taxes applied to this package.
+     * The sum of all taxes on this package.
      *
      * @param Money $TotalTaxes
      * return PackageRateDetail
@@ -160,7 +160,7 @@ class PackageRateDetail
     }
     
     /**
-     * The the charge for this package including surcharges, discounts and taxes.
+     * This package's netFreight + totalSurcharges + totalTaxes.
      *
      * @param Money $NetCharge
      * return PackageRateDetail
@@ -184,7 +184,7 @@ class PackageRateDetail
     }
     
     /**
-     * A list of discounts that were applied to this package.
+     * All rate discounts that apply to this package.
      *
      * @param array[RateDiscount] $FreightDiscounts
      * return PackageRateDetail
@@ -196,7 +196,7 @@ class PackageRateDetail
     }
     
     /**
-     * A list of the surcharges applied to this package.
+     * All rebates that apply to this package.
      *
      * @param array[Rebate] $Rebates
      * return PackageRateDetail
@@ -208,7 +208,7 @@ class PackageRateDetail
     }
     
     /**
-     * A list of the surcharges applied to this package.
+     * All surcharges that apply to this package (either because of characteristics of the package itself, or because it is carrying per-shipment surcharges for the shipment of which it is a part).
      *
      * @param array[Surcharge] $Surcharges
      * return PackageRateDetail
@@ -220,7 +220,7 @@ class PackageRateDetail
     }
     
     /**
-     * A list of the taxes applied to this package.
+     * All taxes applicable (or distributed to) this package.
      *
      * @param array[Tax] $Taxes
      * return PackageRateDetail

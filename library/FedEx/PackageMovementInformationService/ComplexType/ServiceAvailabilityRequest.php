@@ -16,7 +16,7 @@ class ServiceAvailabilityRequest
     protected $_name = 'ServiceAvailabilityRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return ServiceAvailabilityRequest
@@ -100,7 +100,7 @@ class ServiceAvailabilityRequest
     }
     
     /**
-     * Identification of a FedEx operating company (transportation). For this transaction the value must be "FDXE".
+     * Optionally supplied instead of service to restrict reply to services for a specific carrier.
      *
      * @param CarrierCodeType $CarrierCode
      * return ServiceAvailabilityRequest
@@ -112,7 +112,7 @@ class ServiceAvailabilityRequest
     }
     
     /**
-     * Identifies the FedEx transportation service to check for availability. See ServiceType for valid values. Omit this element and the Packaging element to get a list of every available service.
+     * Restricts reply to single service, if supplied.
      *
      * @param ServiceType $Service
      * return ServiceAvailabilityRequest

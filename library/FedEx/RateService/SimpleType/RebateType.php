@@ -13,7 +13,7 @@ namespace FedEx\RateService\SimpleType;
 class RebateType
     extends AbstractSimpleType
 {
+    const _BONUS = 'BONUS';
     const _EARNED = 'EARNED';
     const _OTHER = 'OTHER';
-    const _BONUS = 'BONUS';
 }

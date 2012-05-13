@@ -16,7 +16,7 @@ class EMailNotificationRecipient
     protected $_name = 'EMailNotificationRecipient';
 
     /**
-     * 
+     * Identifies the relationship this email recipient has to the shipment.
      *
      * @param EMailNotificationRecipientType $EMailNotificationRecipientType
      * return EMailNotificationRecipient
@@ -28,7 +28,7 @@ class EMailNotificationRecipient
     }
     
     /**
-     * 
+     * The email address to send the notification to
      *
      * @param string $EMailAddress
      * return EMailNotificationRecipient
@@ -40,43 +40,19 @@ class EMailNotificationRecipient
     }
     
     /**
-     * 
+     * The types of email notifications being requested for this recipient.
      *
-     * @param boolean $NotifyOnShipment
+     * @param array[EMailNotificationEventType] $NotificationEventsRequested
      * return EMailNotificationRecipient
      */
-    public function setNotifyOnShipment($notifyOnShipment)
+    public function setNotificationEventsRequested(array $notificationEventsRequested)
     {
-        $this->NotifyOnShipment = $notifyOnShipment;
+        $this->NotificationEventsRequested = $notificationEventsRequested;
         return $this;
     }
     
     /**
-     * 
-     *
-     * @param boolean $NotifyOnException
-     * return EMailNotificationRecipient
-     */
-    public function setNotifyOnException($notifyOnException)
-    {
-        $this->NotifyOnException = $notifyOnException;
-        return $this;
-    }
-    
-    /**
-     * 
-     *
-     * @param boolean $NotifyOnDelivery
-     * return EMailNotificationRecipient
-     */
-    public function setNotifyOnDelivery($notifyOnDelivery)
-    {
-        $this->NotifyOnDelivery = $notifyOnDelivery;
-        return $this;
-    }
-    
-    /**
-     * 
+     * The format of the email notification.
      *
      * @param EMailNotificationFormatType $Format
      * return EMailNotificationRecipient
@@ -88,7 +64,7 @@ class EMailNotificationRecipient
     }
     
     /**
-     * 
+     * The language/locale to be used in this email notification.
      *
      * @param Localization $Localization
      * return EMailNotificationRecipient

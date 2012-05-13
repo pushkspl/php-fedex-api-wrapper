@@ -16,7 +16,7 @@ class CustomerReference
     protected $_name = 'CustomerReference';
 
     /**
-     * The reference type to be associated with this reference data.
+     * 
      *
      * @param CustomerReferenceType $CustomerReferenceType
      * return CustomerReference

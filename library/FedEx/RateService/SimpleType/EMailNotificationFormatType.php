@@ -2,7 +2,7 @@
 namespace FedEx\RateService\SimpleType;
 
 /**
- * A unique format can be specified for each email address indicated. The format will apply to notification emails sent to a particular email address..
+ * The format of the email
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)

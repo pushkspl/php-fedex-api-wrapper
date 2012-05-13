@@ -39,18 +39,6 @@ class FreightGuaranteeDetail
         return $this;
     }
     
-    /**
-     * Time for GUARANTEED_TIME only.
-     *
-     * @param time $Time
-     * return FreightGuaranteeDetail
-     */
-    public function setTime(time $time)
-    {
-        $this->Time = $time;
-        return $this;
-    }
-    
 
     
 }

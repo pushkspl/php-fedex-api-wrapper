@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Shipment level rate information. Currently this is the same as the package level rate information.
+ * Data for a shipment's total/summary rates, as calculated per a specific rate type. The "total..." fields may differ from the sum of corresponding package data for Multiweight or Express MPS.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class ShipmentRateDetail
     protected $_name = 'ShipmentRateDetail';
 
     /**
-     * The type used for this specific set of rate data.
+     * Type used for this specific set of rate data.
      *
      * @param ReturnedRateType $RateType
      * return ShipmentRateDetail
@@ -28,7 +28,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The FedEx rate scale used to calculate these rates.
+     * Indicates the rate scale used.
      *
      * @param string $RateScale
      * return ShipmentRateDetail
@@ -40,7 +40,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The FedEx rate zone used to calculate these rates.
+     * Indicates the rate zone used (based on origin and destination).
      *
      * @param string $RateZone
      * return ShipmentRateDetail
@@ -54,10 +54,10 @@ class ShipmentRateDetail
     /**
      * Identifies the type of pricing used for this shipment.
      *
-     * @param array[PricingCodeType] $PricingCode
+     * @param PricingCodeType $PricingCode
      * return ShipmentRateDetail
      */
-    public function setPricingCode(array $pricingCode)
+    public function setPricingCode(\FedEx\ShipService\SimpleType\PricingCodeType $pricingCode)
     {
         $this->PricingCode = $pricingCode;
         return $this;
@@ -88,7 +88,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * Currency exchange rate information.
+     * Specifies the currency exchange performed on financial amounts for this rate.
      *
      * @param CurrencyExchangeRate $CurrencyExchangeRate
      * return ShipmentRateDetail
@@ -100,7 +100,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * Special circumstance rating used for this shipment.
+     * Indicates which special rating cases applied to this shipment.
      *
      * @param array[SpecialRatingAppliedType] $SpecialRatingApplied
      * return ShipmentRateDetail
@@ -160,7 +160,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The dimensional weith used to calculate these rates, if applicible.
+     * Sum of dimensional weights for all packages.
      *
      * @param Weight $TotalDimWeight
      * return ShipmentRateDetail
@@ -220,7 +220,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * 
+     * This shipment's totalNetFreight + totalSurcharges (not including totalTaxes).
      *
      * @param Money $TotalNetFedExCharge
      * return ShipmentRateDetail
@@ -232,7 +232,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The total amount of all taxes applied to this shipment. Currently not supported.
+     * Total of the transportation-based taxes.
      *
      * @param Money $TotalTaxes
      * return ShipmentRateDetail
@@ -292,7 +292,31 @@ class ShipmentRateDetail
     }
     
     /**
-     * 
+     * Identifies the Rate Details per each leg in a Freight Shipment
+     *
+     * @param array[ShipmentLegRateDetail] $ShipmentLegRateDetails
+     * return ShipmentRateDetail
+     */
+    public function setShipmentLegRateDetails(array $shipmentLegRateDetails)
+    {
+        $this->ShipmentLegRateDetails = $shipmentLegRateDetails;
+        return $this;
+    }
+    
+    /**
+     * Rate data specific to FedEx Freight and FedEx National Freight services.
+     *
+     * @param FreightRateDetail $FreightRateDetail
+     * return ShipmentRateDetail
+     */
+    public function setFreightRateDetail(FreightRateDetail $freightRateDetail)
+    {
+        $this->FreightRateDetail = $freightRateDetail;
+        return $this;
+    }
+    
+    /**
+     * All rate discounts that apply to this shipment.
      *
      * @param array[RateDiscount] $FreightDiscounts
      * return ShipmentRateDetail
@@ -304,7 +328,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * 
+     * All rebates that apply to this shipment.
      *
      * @param array[Rebate] $Rebates
      * return ShipmentRateDetail
@@ -316,7 +340,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * 
+     * All surcharges that apply to this shipment.
      *
      * @param array[Surcharge] $Surcharges
      * return ShipmentRateDetail
@@ -328,7 +352,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * 
+     * All transportation-based taxes applicable to this shipment.
      *
      * @param array[Tax] $Taxes
      * return ShipmentRateDetail
@@ -352,7 +376,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The variable handling charges calculated based on the type variable handling charges requested.
+     * The "order level" variable handling charges.
      *
      * @param VariableHandlingCharges $VariableHandlingCharges
      * return ShipmentRateDetail
@@ -364,7 +388,7 @@ class ShipmentRateDetail
     }
     
     /**
-     * The total of the package and shipment level variable handling charges.
+     * The total of all variable handling charges at both shipment (order) and package level.
      *
      * @param VariableHandlingCharges $TotalVariableHandlingCharges
      * return ShipmentRateDetail

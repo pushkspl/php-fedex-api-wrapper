@@ -16,7 +16,7 @@ class SignatureProofOfDeliveryLetterReply
     protected $_name = 'SignatureProofOfDeliveryLetterReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * This contains the severity type of the most severe Notification in the Notifications array.
      *
      * @param NotificationSeverityType $HighestSeverity
      * return SignatureProofOfDeliveryLetterReply
@@ -28,7 +28,7 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
-     * The descriptive data detailing the status of a submitted transaction.
+     * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
      * @param array[Notification] $Notifications
      * return SignatureProofOfDeliveryLetterReply
@@ -40,7 +40,7 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
      * @param TransactionDetail $TransactionDetail
      * return SignatureProofOfDeliveryLetterReply
@@ -52,7 +52,7 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Image of letter encoded in Base64 format.
      *
      * @param VersionId $Version
      * return SignatureProofOfDeliveryLetterReply
@@ -64,7 +64,7 @@ class SignatureProofOfDeliveryLetterReply
     }
     
     /**
-     * Base64-encoded SPOD Letter.
+     * Image of letter encoded in Base64 format.
      *
      * @param base64Binary $Letter
      * return SignatureProofOfDeliveryLetterReply

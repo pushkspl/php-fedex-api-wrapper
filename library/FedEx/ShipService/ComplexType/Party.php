@@ -28,14 +28,14 @@ class Party
     }
     
     /**
-     * Descriptive data for taxpayer identification information.
+     * 
      *
-     * @param TaxpayerIdentification $Tin
+     * @param array[TaxpayerIdentification] $Tins
      * return Party
      */
-    public function setTin(TaxpayerIdentification $tin)
+    public function setTins(array $tins)
     {
-        $this->Tin = $tin;
+        $this->Tins = $tins;
         return $this;
     }
     

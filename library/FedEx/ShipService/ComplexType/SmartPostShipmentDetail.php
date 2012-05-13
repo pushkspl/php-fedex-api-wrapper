@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Data required for shipments handled under the SMART_POST and GROUND_SMART_POST service types.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -36,18 +36,6 @@ class SmartPostShipmentDetail
     public function setAncillaryEndorsement(\FedEx\ShipService\SimpleType\SmartPostAncillaryEndorsementType $ancillaryEndorsement)
     {
         $this->AncillaryEndorsement = $ancillaryEndorsement;
-        return $this;
-    }
-    
-    /**
-     * 
-     *
-     * @param array[SmartPostShipmentSpecialServiceType] $SpecialServices
-     * return SmartPostShipmentDetail
-     */
-    public function setSpecialServices(array $specialServices)
-    {
-        $this->SpecialServices = $specialServices;
         return $this;
     }
     

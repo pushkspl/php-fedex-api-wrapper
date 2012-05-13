@@ -13,9 +13,9 @@ namespace FedEx\RateService\SimpleType;
 class NotificationSeverityType
     extends AbstractSimpleType
 {
-    const _SUCCESS = 'SUCCESS';
-    const _NOTE = 'NOTE';
-    const _WARNING = 'WARNING';
     const _ERROR = 'ERROR';
     const _FAILURE = 'FAILURE';
+    const _NOTE = 'NOTE';
+    const _SUCCESS = 'SUCCESS';
+    const _WARNING = 'WARNING';
 }

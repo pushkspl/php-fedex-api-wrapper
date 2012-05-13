@@ -42,7 +42,7 @@ class RequestedPackageLineItem
     /**
      * Used only with PACKAGE_GROUPS, as a count of packages within a group of identical packages.
      *
-     * @param positiveInteger $GroupPackageCount
+     * @param nonNegativeInteger $GroupPackageCount
      * return RequestedPackageLineItem
      */
     public function setGroupPackageCount($groupPackageCount)
@@ -52,7 +52,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * ?
+     * 
      *
      * @param VariableHandlingChargeDetail $VariableHandlingChargeDetail
      * return RequestedPackageLineItem
@@ -64,7 +64,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalInsuredValue and packageCount on the shipment will be used to determine this value.
+     * Used for INDIVIDUAL_PACKAGES, PACKAGE_GROUPS and PACKAGE_SUMMARY.
      *
      * @param Money $InsuredValue
      * return RequestedPackageLineItem
@@ -76,7 +76,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * Only used for INDIVIDUAL_PACKAGES and PACKAGE_GROUPS. Ignored for PACKAGE_SUMMARY, in which case totalweight and packageCount on the shipment will be used to determine this value.
+     * Used for INDIVIDUAL_PACKAGES, PACKAGE_GROUPS and PACKAGE_SUMMARY.
      *
      * @param Weight $Weight
      * return RequestedPackageLineItem
@@ -88,7 +88,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * ?
+     * 
      *
      * @param Dimensions $Dimensions
      * return RequestedPackageLineItem
@@ -124,7 +124,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * ?
+     * 
      *
      * @param array[CustomerReference] $CustomerReferences
      * return RequestedPackageLineItem
@@ -136,7 +136,7 @@ class RequestedPackageLineItem
     }
     
     /**
-     * ?
+     * 
      *
      * @param PackageSpecialServicesRequested $SpecialServicesRequested
      * return RequestedPackageLineItem

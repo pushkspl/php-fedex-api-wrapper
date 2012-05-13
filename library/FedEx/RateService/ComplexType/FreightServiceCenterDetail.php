@@ -78,10 +78,10 @@ class FreightServiceCenterDetail
     /**
      * Time to travel between customer address (pickup or delivery) and the supporting Freight / National Freight service center.
      *
-     * @param string $LocalDuration
+     * @param duration $LocalDuration
      * return FreightServiceCenterDetail
      */
-    public function setLocalDuration($localDuration)
+    public function setLocalDuration(duration $localDuration)
     {
         $this->LocalDuration = $localDuration;
         return $this;
@@ -120,6 +120,30 @@ class FreightServiceCenterDetail
     public function setGatewayLocationId($gatewayLocationId)
     {
         $this->GatewayLocationId = $gatewayLocationId;
+        return $this;
+    }
+    
+    /**
+     * Alphabetical code identifying a Freight Service Center
+     *
+     * @param string $Location
+     * return FreightServiceCenterDetail
+     */
+    public function setLocation($location)
+    {
+        $this->Location = $location;
+        return $this;
+    }
+    
+    /**
+     * Freight service center Contact and Address
+     *
+     * @param ContactAndAddress $ContactAndAddress
+     * return FreightServiceCenterDetail
+     */
+    public function setContactAndAddress(ContactAndAddress $contactAndAddress)
+    {
+        $this->ContactAndAddress = $contactAndAddress;
         return $this;
     }
     

@@ -16,7 +16,7 @@ class TrackDetail
     protected $_name = 'TrackDetail';
 
     /**
-     * Holds error or warning information for a particular package.
+     * To report soft error on an individual track detail.
      *
      * @param Notification $Notification
      * return TrackDetail
@@ -28,7 +28,7 @@ class TrackDetail
     }
     
     /**
-     * The tracking number of this package.
+     * The FedEx package identifier.
      *
      * @param string $TrackingNumber
      * return TrackDetail
@@ -40,7 +40,19 @@ class TrackDetail
     }
     
     /**
-     * Further identifies a tracking number in case duplicates exist. Returned if a track by number results in duplicates.
+     * 
+     *
+     * @param StringBarcode $Barcode
+     * return TrackDetail
+     */
+    public function setBarcode(StringBarcode $barcode)
+    {
+        $this->Barcode = $barcode;
+        return $this;
+    }
+    
+    /**
+     * When duplicate tracking numbers exist this data is returned with summary information for each of the duplicates. The summary information is used to determine which of the duplicates the intended tracking number is. This identifier is used on a subsequent track request to retrieve the tracking data for the desired tracking number.
      *
      * @param string $TrackingNumberUniqueIdentifier
      * return TrackDetail
@@ -52,7 +64,7 @@ class TrackDetail
     }
     
     /**
-     * For example, SP = split shipment.
+     * A code that identifies this type of status. This is the most recent status.
      *
      * @param string $StatusCode
      * return TrackDetail
@@ -64,7 +76,7 @@ class TrackDetail
     }
     
     /**
-     * Tracking status description of this package.
+     * A human-readable description of this status.
      *
      * @param string $StatusDescription
      * return TrackDetail
@@ -76,7 +88,7 @@ class TrackDetail
     }
     
     /**
-     * Tracking reconciliation of this package.
+     * Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for.
      *
      * @param TrackReconciliation $Reconciliation
      * return TrackDetail
@@ -88,7 +100,7 @@ class TrackDetail
     }
     
     /**
-     * Only applicable to H3 Express freight areas inbound to U.S. to FedEx location only. Additional days may be required for final delivery. Please call Customer Service for details.
+     * Used to convey information such as. 1. FedEx has received information about a package but has not yet taken possession of it. 2. FedEx has handed the package off to a third party for final delivery. 3. The package delivery has been cancelled
      *
      * @param string $ServiceCommitMessage
      * return TrackDetail
@@ -100,7 +112,7 @@ class TrackDetail
     }
     
     /**
-     * Carrier associated with tracking number.
+     * Identifies a FedEx operating company (transportation).
      *
      * @param CarrierCodeType $CarrierCode
      * return TrackDetail
@@ -112,7 +124,31 @@ class TrackDetail
     }
     
     /**
-     * Other related identifiers for this package such as reference numbers. May occur zero to many times for each tracking number.
+     * Identifies operating transportation company that is the specific to the carrier code.
+     *
+     * @param OperatingCompanyType $OperatingCompany
+     * return TrackDetail
+     */
+    public function setOperatingCompany(\FedEx\TrackService\SimpleType\OperatingCompanyType $operatingCompany)
+    {
+        $this->OperatingCompany = $operatingCompany;
+        return $this;
+    }
+    
+    /**
+     * Specifies the FXO production centre contact and address.
+     *
+     * @param ContactAndAddress $ProductionLocationContactAndAddress
+     * return TrackDetail
+     */
+    public function setProductionLocationContactAndAddress(ContactAndAddress $productionLocationContactAndAddress)
+    {
+        $this->ProductionLocationContactAndAddress = $productionLocationContactAndAddress;
+        return $this;
+    }
+    
+    /**
+     * Other related identifiers for this package such as reference numbers.
      *
      * @param array[TrackPackageIdentifier] $OtherIdentifiers
      * return TrackDetail
@@ -124,7 +160,7 @@ class TrackDetail
     }
     
     /**
-     * The service type of this package.
+     * Retained for legacy compatibility only. User/screen friendly description of the Service type (e.g. Priority Overnight).
      *
      * @param string $ServiceInfo
      * return TrackDetail
@@ -136,7 +172,7 @@ class TrackDetail
     }
     
     /**
-     * The enumerated service type of this package.
+     * Strict representation of the Service type (e.g. PRIORITY_OVERNIGHT).
      *
      * @param ServiceType $ServiceType
      * return TrackDetail
@@ -160,7 +196,19 @@ class TrackDetail
     }
     
     /**
-     * Not available at this time.
+     * Physical dimensions of the package.
+     *
+     * @param Dimensions $PackageDimensions
+     * return TrackDetail
+     */
+    public function setPackageDimensions(Dimensions $packageDimensions)
+    {
+        $this->PackageDimensions = $packageDimensions;
+        return $this;
+    }
+    
+    /**
+     * The dimensional weight of the package.
      *
      * @param Weight $PackageDimensionalWeight
      * return TrackDetail
@@ -172,7 +220,7 @@ class TrackDetail
     }
     
     /**
-     * The weight of this entire shipment.
+     * The weight of the entire shipment.
      *
      * @param Weight $ShipmentWeight
      * return TrackDetail
@@ -184,7 +232,7 @@ class TrackDetail
     }
     
     /**
-     * The packaging type of this package.
+     * Retained for legacy compatibility only.
      *
      * @param string $Packaging
      * return TrackDetail
@@ -196,7 +244,7 @@ class TrackDetail
     }
     
     /**
-     * The enumerated packaging type used for this package.
+     * Strict representation of the Packaging type (e.g. FEDEX_BOX, YOUR_PACKAGING).
      *
      * @param PackagingType $PackagingType
      * return TrackDetail
@@ -208,7 +256,7 @@ class TrackDetail
     }
     
     /**
-     * The sequence of the package for FedEx Express international MPS (1 of X).
+     * The sequence number of this package in a shipment. This would be 2 if it was package number 2 of 4.
      *
      * @param nonNegativeInteger $PackageSequenceNumber
      * return TrackDetail
@@ -220,7 +268,7 @@ class TrackDetail
     }
     
     /**
-     * The number of pieces in this shipment.
+     * The number of packages in this shipment.
      *
      * @param nonNegativeInteger $PackageCount
      * return TrackDetail
@@ -228,6 +276,30 @@ class TrackDetail
     public function setPackageCount($packageCount)
     {
         $this->PackageCount = $packageCount;
+        return $this;
+    }
+    
+    /**
+     * 
+     *
+     * @param TrackReturnLabelType $TrackReturnLabelType
+     * return TrackDetail
+     */
+    public function setTrackReturnLabelType(\FedEx\TrackService\SimpleType\TrackReturnLabelType $trackReturnLabelType)
+    {
+        $this->TrackReturnLabelType = $trackReturnLabelType;
+        return $this;
+    }
+    
+    /**
+     * 
+     *
+     * @param string $TrackReturnDescription
+     * return TrackDetail
+     */
+    public function setTrackReturnDescription($trackReturnDescription)
+    {
+        $this->TrackReturnDescription = $trackReturnDescription;
         return $this;
     }
     
@@ -244,7 +316,7 @@ class TrackDetail
     }
     
     /**
-     * The address information for the origin of the package.
+     * The address of the FedEx pickup location/facility.
      *
      * @param Address $OriginLocationAddress
      * return TrackDetail
@@ -256,7 +328,7 @@ class TrackDetail
     }
     
     /**
-     * Estimated package pickup time for shipments that haven't been picked up yet.
+     * Estimated package pickup time for shipments that haven't been picked up.
      *
      * @param dateTime $EstimatedPickupTimestamp
      * return TrackDetail
@@ -280,7 +352,7 @@ class TrackDetail
     }
     
     /**
-     * Total distance package traveled. Returned in miles only at this time.
+     * The distance from the origin to the destination. Returned for Custom Critical shipments.
      *
      * @param Distance $TotalTransitDistance
      * return TrackDetail
@@ -292,7 +364,7 @@ class TrackDetail
     }
     
     /**
-     * Total distance package still has to travel. Returned in miles only at this time.
+     * Total distance package still has to travel. Returned for Custom Critical shipments.
      *
      * @param Distance $DistanceToDestination
      * return TrackDetail
@@ -304,7 +376,7 @@ class TrackDetail
     }
     
     /**
-     * The address the package is destined to.
+     * The address this package is to be (or has been) delivered.
      *
      * @param Address $DestinationAddress
      * return TrackDetail
@@ -316,7 +388,7 @@ class TrackDetail
     }
     
     /**
-     * The address of the carrier facility for the package destination.
+     * The address of the FedEx delivery location/facility.
      *
      * @param Address $DestinationLocationAddress
      * return TrackDetail
@@ -352,7 +424,7 @@ class TrackDetail
     }
     
     /**
-     * The address where the package was delivered.
+     * Actual address where package was delivered. Differs from destinationAddress, which indicates where the package was to be delivered; This field tells where delivery actually occurred (next door, at station, etc.)
      *
      * @param Address $ActualDeliveryAddress
      * return TrackDetail
@@ -364,7 +436,19 @@ class TrackDetail
     }
     
     /**
-     * The delivery location at the delivered to address.
+     * Identifies the method of office order delivery.
+     *
+     * @param OfficeOrderDeliveryMethodType $OfficeOrderDeliveryMethod
+     * return TrackDetail
+     */
+    public function setOfficeOrderDeliveryMethod(\FedEx\TrackService\SimpleType\OfficeOrderDeliveryMethodType $officeOrderDeliveryMethod)
+    {
+        $this->OfficeOrderDeliveryMethod = $officeOrderDeliveryMethod;
+        return $this;
+    }
+    
+    /**
+     * Strict text indicating the delivery location at the delivered to address.
      *
      * @param TrackDeliveryLocationType $DeliveryLocationType
      * return TrackDetail
@@ -376,7 +460,7 @@ class TrackDetail
     }
     
     /**
-     * A description of where the package was delivered (Front Desk, Back Door, etc.)
+     * User/screen friendly representation of the DeliveryLocationType (delivery location at the delivered to address). Can be returned in localized text.
      *
      * @param string $DeliveryLocationDescription
      * return TrackDetail
@@ -388,7 +472,7 @@ class TrackDetail
     }
     
     /**
-     * Name on delivery record or release number.
+     * This is either the name of the person that signed for the package or "Signature not requested" or "Signature on file".
      *
      * @param string $DeliverySignatureName
      * return TrackDetail
@@ -400,7 +484,7 @@ class TrackDetail
     }
     
     /**
-     * True if signed for signature image is available.
+     * True if signed for by signature image is available.
      *
      * @param boolean $SignatureProofOfDeliveryAvailable
      * return TrackDetail
@@ -412,26 +496,14 @@ class TrackDetail
     }
     
     /**
-     * True if delivery email updates are available for this tracking number.
+     * The types of email notifications that are available for the package.
      *
-     * @param boolean $ProofOfDeliveryNotificationsAvailable
+     * @param array[EMailNotificationEventType] $NotificationEventsAvailable
      * return TrackDetail
      */
-    public function setProofOfDeliveryNotificationsAvailable($proofOfDeliveryNotificationsAvailable)
+    public function setNotificationEventsAvailable(array $notificationEventsAvailable)
     {
-        $this->ProofOfDeliveryNotificationsAvailable = $proofOfDeliveryNotificationsAvailable;
-        return $this;
-    }
-    
-    /**
-     * True if exception email updates are available for this tracking number. Exception notifications include: General Delivery Exception, Incorrect Address,Clearance Delay, and International Shipment Release. Exception notifications are not available after shipment delivery.
-     *
-     * @param boolean $ExceptionNotificationsAvailable
-     * return TrackDetail
-     */
-    public function setExceptionNotificationsAvailable($exceptionNotificationsAvailable)
-    {
-        $this->ExceptionNotificationsAvailable = $exceptionNotificationsAvailable;
+        $this->NotificationEventsAvailable = $notificationEventsAvailable;
         return $this;
     }
     
@@ -444,6 +516,18 @@ class TrackDetail
     public function setSplitShipmentParts(array $splitShipmentParts)
     {
         $this->SplitShipmentParts = $splitShipmentParts;
+        return $this;
+    }
+    
+    /**
+     * Indicates redirection eligibility as determined by tracking service, subject to refinement/override by redirect-to-hold service.
+     *
+     * @param RedirectToHoldEligibilityType $RedirectToHoldEligibility
+     * return TrackDetail
+     */
+    public function setRedirectToHoldEligibility(\FedEx\TrackService\SimpleType\RedirectToHoldEligibilityType $redirectToHoldEligibility)
+    {
+        $this->RedirectToHoldEligibility = $redirectToHoldEligibility;
         return $this;
     }
     

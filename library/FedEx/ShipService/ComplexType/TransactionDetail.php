@@ -16,7 +16,7 @@ class TransactionDetail
     protected $_name = 'TransactionDetail';
 
     /**
-     * Identifies a customer-supplied unique identifier for this transaction. It is returned in the reply message to aid in matching requests to replies.
+     * Free form text to be echoed back in the reply. Used to match requests and replies.
      *
      * @param string $CustomerTransactionId
      * return TransactionDetail
@@ -28,7 +28,7 @@ class TransactionDetail
     }
     
     /**
-     * Governs any future language/translations applied to the data payload(contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).
+     * Governs data payload language/translations (contrasted with ClientDetail.localization, which governs Notification.localizedMessage language selection).
      *
      * @param Localization $Localization
      * return TransactionDetail

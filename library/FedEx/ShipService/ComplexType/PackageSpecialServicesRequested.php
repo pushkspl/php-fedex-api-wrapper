@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Descriptive data regarding special services requested by the shipper for a shipment. If the shipper is requesting a special service which requires additional data (e.g. COD), the special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object. For example, to request COD, "COD" must be included in the SpecialServiceTypes collection and the CodDetail object must contain the required data.
+ * These special services are available at the package level for some or all service types. If the shipper is requesting a special service which requires additional data, the package special service type must be present in the specialServiceTypes collection, and the supporting detail must be provided in the appropriate sub-object below.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class PackageSpecialServicesRequested
     protected $_name = 'PackageSpecialServicesRequested';
 
     /**
-     * Identifies the collection of special service types requested by the shipper. See SpecialServiceTypes for the list of valid enumerated types.
+     * The types of all special services requested for the enclosing shipment or package.
      *
      * @param array[PackageSpecialServiceType] $SpecialServiceTypes
      * return PackageSpecialServicesRequested
@@ -28,14 +28,14 @@ class PackageSpecialServicesRequested
     }
     
     /**
-     * The COD amount that must be collected upon delivery of a package shipped using the COD special service.
+     * For use with FedEx Ground services only; COD must be present in shipment's special services.
      *
-     * @param Money $CodCollectionAmount
+     * @param CodDetail $CodDetail
      * return PackageSpecialServicesRequested
      */
-    public function setCodCollectionAmount(Money $codCollectionAmount)
+    public function setCodDetail(CodDetail $codDetail)
     {
-        $this->CodCollectionAmount = $codCollectionAmount;
+        $this->CodDetail = $codDetail;
         return $this;
     }
     

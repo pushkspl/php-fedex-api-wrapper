@@ -16,7 +16,7 @@ class NotificationParameter
     protected $_name = 'NotificationParameter';
 
     /**
-     * Name identifying the type of the data in the element 'Value'.
+     * Identifies the type of data contained in Value (e.g. SERVICE_TYPE, PACKAGE_SEQUENCE, etc..).
      *
      * @param string $Id
      * return NotificationParameter
@@ -28,7 +28,7 @@ class NotificationParameter
     }
     
     /**
-     * The value that was used as the replacement parameter.
+     * The value of the parameter (e.g. PRIORITY_OVERNIGHT, 2, etc..).
      *
      * @param string $Value
      * return NotificationParameter

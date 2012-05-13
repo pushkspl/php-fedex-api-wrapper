@@ -16,7 +16,7 @@ class CompletedEtdDetail
     protected $_name = 'CompletedEtdDetail';
 
     /**
-     * 
+     * The identifier for all clearance documents associated with this shipment.
      *
      * @param string $FolderId
      * return CompletedEtdDetail

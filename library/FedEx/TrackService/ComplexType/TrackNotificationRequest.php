@@ -16,7 +16,7 @@ class TrackNotificationRequest
     protected $_name = 'TrackNotificationRequest';
 
     /**
-     * The descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
+     * Descriptive data to be used in authentication of the sender's identity (and right to use FedEx web services).
      *
      * @param WebAuthenticationDetail $WebAuthenticationDetail
      * return TrackNotificationRequest
@@ -28,7 +28,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * The descriptive data identifying the client submitting the transaction.
+     * Descriptive data identifying the client submitting the transaction.
      *
      * @param ClientDetail $ClientDetail
      * return TrackNotificationRequest
@@ -40,7 +40,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * The descriptive data for this customer transaction. The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains a free form field that is echoed back in the reply to match requests with replies and data that governs the data payload language/translations
      *
      * @param TransactionDetail $TransactionDetail
      * return TrackNotificationRequest
@@ -64,7 +64,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Tracking number.
+     * The tracking number to which the notifications will be triggered from.
      *
      * @param string $TrackingNumber
      * return TrackNotificationRequest
@@ -88,7 +88,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * To obtain additional data on second and subsequent TrackNotification requests.Client must submit this value in subsequent track requests in order to obtain next page of data. Must contain at least four characters.
+     * When the MoreDataAvailable field is true in a TrackNotificationReply the PagingToken must be sent in the subsequent TrackNotificationRequest to retrieve the next page of data.
      *
      * @param string $PagingToken
      * return TrackNotificationRequest
@@ -100,7 +100,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Populate only if the TrackingNumberUniqueId is known from a previous Tracking request or an Email notifications request that resulted in a duplicate reply.
+     * Use this field when your original request informs you that there are duplicates of this tracking number. If you get duplicates you will also receive some information about each of the duplicate tracking numbers to enable you to chose one and resend that number along with the TrackingNumberUniqueId to get notifications for that tracking number.
      *
      * @param string $TrackingNumberUniqueId
      * return TrackNotificationRequest
@@ -112,7 +112,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Recommend providing date range to find desired track number by limiting the results to this range. If not provided FedEx will default to a range that may not be useful for the search.
+     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
      * @param date $ShipDateRangeBegin
      * return TrackNotificationRequest
@@ -124,7 +124,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * If provided, ShipDateRangeBegin is required. 
+     * To narrow the search to a period in time the ShipDateRangeBegin and ShipDateRangeEnd can be used to help eliminate duplicates.
      *
      * @param date $ShipDateRangeEnd
      * return TrackNotificationRequest
@@ -136,7 +136,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Included in the notification identifying the requester of this notification.
+     * Included in the email notification identifying the requester of this notification.
      *
      * @param string $SenderEMailAddress
      * return TrackNotificationRequest
@@ -148,7 +148,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Included in the notification identifying the requester of this notification.
+     * Included in the email notification identifying the requester of this notification.
      *
      * @param string $SenderContactName
      * return TrackNotificationRequest
@@ -160,7 +160,7 @@ class TrackNotificationRequest
     }
     
     /**
-     * Email notification details.
+     * Who to send the email notifications to and for which events. The notificationRecipientType and NotifyOnShipment fields are not used in this request.
      *
      * @param EMailNotificationDetail $NotificationDetail
      * return TrackNotificationRequest

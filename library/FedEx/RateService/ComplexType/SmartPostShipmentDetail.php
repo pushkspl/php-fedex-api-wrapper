@@ -42,18 +42,6 @@ class SmartPostShipmentDetail
     /**
      * 
      *
-     * @param array[SmartPostShipmentSpecialServiceType] $SpecialServices
-     * return SmartPostShipmentDetail
-     */
-    public function setSpecialServices(array $specialServices)
-    {
-        $this->SpecialServices = $specialServices;
-        return $this;
-    }
-    
-    /**
-     * 
-     *
      * @param string $HubId
      * return SmartPostShipmentDetail
      */

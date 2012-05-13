@@ -16,3 +16,14 @@ function library_autoloader($className)
 }
 
 require_once 'credentials.php';
+
+/**
+ *Examples credentials.php file should look something like this:
+ *
+<?php
+//Change these values below.
+define('FEDEX_ACCOUNT_NUMBER', '12345');
+define('FEDEX_METER_NUMBER', '12345');
+define('FEDEX_KEY', '12345');
+define('FEDEX_PASSWORD', '12345'); 
+ */

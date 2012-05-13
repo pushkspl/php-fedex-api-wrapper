@@ -28,7 +28,7 @@ class CompletedTagDetail
     }
     
     /**
-     * 
+     * As of June 2007, returned only for FedEx Express services.
      *
      * @param duration $AccessTime
      * return CompletedTagDetail
@@ -40,7 +40,7 @@ class CompletedTagDetail
     }
     
     /**
-     * 
+     * As of June 2007, returned only for FedEx Express services.
      *
      * @param time $CutoffTime
      * return CompletedTagDetail
@@ -52,7 +52,7 @@ class CompletedTagDetail
     }
     
     /**
-     * 
+     * As of June 2007, returned only for FedEx Express services.
      *
      * @param string $Location
      * return CompletedTagDetail
@@ -64,7 +64,7 @@ class CompletedTagDetail
     }
     
     /**
-     * 
+     * As of June 2007, returned only for FedEx Express services.
      *
      * @param dateTime $DeliveryCommitment
      * return CompletedTagDetail
@@ -76,7 +76,7 @@ class CompletedTagDetail
     }
     
     /**
-     * 
+     * FEDEX INTERNAL USE ONLY: for use by INET.
      *
      * @param date $DispatchDate
      * return CompletedTagDetail

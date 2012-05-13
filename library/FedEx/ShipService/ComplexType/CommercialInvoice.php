@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through FedEx System. Customers are responsible for printing their own Commercial Invoice. Commercial Invoice support consists of a maximum of 99 commodity line items.
+ * CommercialInvoice element is required for electronic upload of CI data. It will serve to create/transmit an Electronic Commercial Invoice through the FedEx Systems. Customers are responsible for printing their own Commercial Invoice.If you would likeFedEx to generate a Commercial Invoice and transmit it to Customs. for clearance purposes, you need to specify that in the ShippingDocumentSpecification element. If you would like a copy of the Commercial Invoice that FedEx generated returned to you in reply it needs to be specified in the ETDDetail/RequestedDocumentCopies element. Commercial Invoice support consists of maximum of 99 commodity line items.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class CommercialInvoice
     protected $_name = 'CommercialInvoice';
 
     /**
-     * Commercial Invoice comments to be uploaded to customs.
+     * Any comments that need to be communicated about this shipment.
      *
      * @param array[string] $Comments
      * return CommercialInvoice
@@ -28,11 +28,7 @@ class CommercialInvoice
     }
     
     /**
-     * 
-                Format: Two explicit decimal positions max length 19 including decimal.
-                Required if Terms Of Sale is CFR or CIF.
-                This charge should be added to the total customs value amount.
-              
+     * Any freight charges that are associated with this shipment.
      *
      * @param Money $FreightCharge
      * return CommercialInvoice
@@ -44,10 +40,7 @@ class CommercialInvoice
     }
     
     /**
-     * 
-                Format: Two explicit decimal positions max length 19 including decimal.
-                This charge should be added to the total customs value amount.
-              
+     * Any taxes or miscellaneous charges(other than Freight charges or Insurance charges) that are associated with this shipment.
      *
      * @param Money $TaxesOrMiscellaneousCharge
      * return CommercialInvoice
@@ -119,7 +112,7 @@ class CommercialInvoice
     }
     
     /**
-     * Test for the Commercial Invoice. Note that Sold is not a valid Purpose for a Proforma Invoice.
+     * The reason for the shipment. Note: SOLD is not a valid purpose for a Proforma Invoice.
      *
      * @param PurposeOfShipmentType $Purpose
      * return CommercialInvoice
@@ -131,19 +124,7 @@ class CommercialInvoice
     }
     
     /**
-     * Descriptive text for the purpose of the shipment.
-     *
-     * @param string $PurposeOfShipmentDescription
-     * return CommercialInvoice
-     */
-    public function setPurposeOfShipmentDescription($purposeOfShipmentDescription)
-    {
-        $this->PurposeOfShipmentDescription = $purposeOfShipmentDescription;
-        return $this;
-    }
-    
-    /**
-     * Customer assigned invoice number.
+     * Customer assigned Invoice number
      *
      * @param string $CustomerInvoiceNumber
      * return CommercialInvoice
@@ -167,7 +148,7 @@ class CommercialInvoice
     }
     
     /**
-     * Defines the terms of the sale.
+     * Required for dutiable international Express or Ground shipment. This field is not applicable to an international PIB(document) or a non-document which does not require a Commercial Invoice
      *
      * @param TermsOfSaleType $TermsOfSale
      * return CommercialInvoice

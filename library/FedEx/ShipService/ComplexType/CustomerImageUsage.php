@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * ?
+ * 
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class CustomerImageUsage
     protected $_name = 'CustomerImageUsage';
 
     /**
-     * ?
+     * 
      *
      * @param CustomerImageUsageType $Type
      * return CustomerImageUsage
@@ -28,7 +28,7 @@ class CustomerImageUsage
     }
     
     /**
-     * ?
+     * 
      *
      * @param ImageId $Id
      * return CustomerImageUsage

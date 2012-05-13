@@ -3,7 +3,6 @@ namespace FedEx\PackageMovementInformationService\ComplexType;
 
 /**
  * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
-							
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -17,7 +16,7 @@ class VersionId
     protected $_name = 'VersionId';
 
     /**
-     * Identifies a system or sub-system which performs an operation. Customers using the FedEx Web Services interface should set this element to "pmis".
+     * Identifies a system or sub-system which performs an operation.
      *
      * @param string $ServiceId
      * return VersionId
@@ -29,7 +28,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service business level. This value should be set to 4.
+     * Identifies the service business level.
      *
      * @param int $Major
      * return VersionId
@@ -41,7 +40,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service interface level. This value should be set to 0.
+     * Identifies the service interface level.
      *
      * @param int $Intermediate
      * return VersionId
@@ -53,7 +52,7 @@ class VersionId
     }
     
     /**
-     * Identifies the service code level. This value should be set to 0.
+     * Identifies the service code level.
      *
      * @param int $Minor
      * return VersionId

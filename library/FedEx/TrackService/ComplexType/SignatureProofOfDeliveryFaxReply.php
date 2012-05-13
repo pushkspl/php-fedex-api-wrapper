@@ -16,7 +16,7 @@ class SignatureProofOfDeliveryFaxReply
     protected $_name = 'SignatureProofOfDeliveryFaxReply';
 
     /**
-     * Identifies the highest severity encountered when executing the request; in order from high to low: FAILURE, ERROR, WARNING, NOTE, SUCCESS.
+     * This contains the severity type of the most severe Notification in the Notifications array.
      *
      * @param NotificationSeverityType $HighestSeverity
      * return SignatureProofOfDeliveryFaxReply
@@ -28,7 +28,7 @@ class SignatureProofOfDeliveryFaxReply
     }
     
     /**
-     * The descriptive data detailing the status of a submitted transaction.
+     * Information about the request/reply such was the transaction successful or not, and any additional information relevant to the request and/or reply. There may be multiple Notifications in a reply.
      *
      * @param array[Notification] $Notifications
      * return SignatureProofOfDeliveryFaxReply
@@ -40,7 +40,7 @@ class SignatureProofOfDeliveryFaxReply
     }
     
     /**
-     * Descriptive data that governs data payload language/translations.  The TransactionDetail from the request is echoed back to the caller in the corresponding reply.
+     * Contains the CustomerTransactionDetail that is echoed back to the caller for matching requests and replies and a Localization element for defining the language/translation used in the reply data.
      *
      * @param TransactionDetail $TransactionDetail
      * return SignatureProofOfDeliveryFaxReply
@@ -52,7 +52,7 @@ class SignatureProofOfDeliveryFaxReply
     }
     
     /**
-     * Identifies the version/level of a service operation expected by a caller (in each request) and performed by the callee (in each reply).
+     * Contains the version of the reply being used.
      *
      * @param VersionId $Version
      * return SignatureProofOfDeliveryFaxReply

@@ -16,18 +16,6 @@ class VariableHandlingChargeDetail
     protected $_name = 'VariableHandlingChargeDetail';
 
     /**
-     * The type of handling charge to be calculated and returned in the reply.
-     *
-     * @param VariableHandlingChargeType $VariableHandlingChargeType
-     * return VariableHandlingChargeDetail
-     */
-    public function setVariableHandlingChargeType(\FedEx\ShipService\SimpleType\VariableHandlingChargeType $variableHandlingChargeType)
-    {
-        $this->VariableHandlingChargeType = $variableHandlingChargeType;
-        return $this;
-    }
-    
-    /**
      * 
                 Used with Variable handling charge type of FIXED_VALUE.
                 Contains the amount to be added to the freight charge.
@@ -44,11 +32,7 @@ class VariableHandlingChargeDetail
     }
     
     /**
-     * 
-                Used with Variable handling charge types PERCENTAGE_OF_BASE, PERCENTAGE_OF_NET or PERCETAGE_OF_NET_EXCL_TAXES.
-                Used to calculate the amount to be added to the freight charge.
-                Contains 2 explicit decimal positions.
-              
+     * Actual percentage (10 means 10%, which is a mutiplier of 0.1)
      *
      * @param decimal $PercentValue
      * return VariableHandlingChargeDetail
@@ -56,6 +40,30 @@ class VariableHandlingChargeDetail
     public function setPercentValue($percentValue)
     {
         $this->PercentValue = $percentValue;
+        return $this;
+    }
+    
+    /**
+     * Select the value from a set of rate data to which the percentage is applied.
+     *
+     * @param RateElementBasisType $RateElementBasis
+     * return VariableHandlingChargeDetail
+     */
+    public function setRateElementBasis(\FedEx\ShipService\SimpleType\RateElementBasisType $rateElementBasis)
+    {
+        $this->RateElementBasis = $rateElementBasis;
+        return $this;
+    }
+    
+    /**
+     * Select the type of rate from which the element is to be selected.
+     *
+     * @param RateTypeBasisType $RateTypeBasis
+     * return VariableHandlingChargeDetail
+     */
+    public function setRateTypeBasis(\FedEx\ShipService\SimpleType\RateTypeBasisType $rateTypeBasis)
+    {
+        $this->RateTypeBasis = $rateTypeBasis;
         return $this;
     }
     

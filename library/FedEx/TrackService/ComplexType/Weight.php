@@ -16,7 +16,7 @@ class Weight
     protected $_name = 'Weight';
 
     /**
-     * Identifies the unit of measure associated with a weight value. See WeightUnits for valid values.
+     * Identifies the unit of measure associated with a weight value.
      *
      * @param WeightUnits $Units
      * return Weight
@@ -28,7 +28,7 @@ class Weight
     }
     
     /**
-     * Identifies the weight value of the package.
+     * Identifies the weight value of a package/shipment.
      *
      * @param decimal $Value
      * return Weight

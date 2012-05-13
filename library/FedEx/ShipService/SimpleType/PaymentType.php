@@ -13,6 +13,7 @@ namespace FedEx\ShipService\SimpleType;
 class PaymentType
     extends AbstractSimpleType
 {
+    const _ACCOUNT = 'ACCOUNT';
     const _COLLECT = 'COLLECT';
     const _RECIPIENT = 'RECIPIENT';
     const _SENDER = 'SENDER';

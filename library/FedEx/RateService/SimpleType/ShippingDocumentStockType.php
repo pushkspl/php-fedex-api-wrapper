@@ -13,6 +13,8 @@ namespace FedEx\RateService\SimpleType;
 class ShippingDocumentStockType
     extends AbstractSimpleType
 {
+    const _OP_900_LG_B = 'OP_900_LG_B';
+    const _OP_900_LL_B = 'OP_900_LL_B';
     const _PAPER_4X6 = 'PAPER_4X6';
     const _PAPER_LETTER = 'PAPER_LETTER';
     const _STOCK_4X6 = 'STOCK_4X6';

@@ -88,7 +88,7 @@ class RequestedShipment
     }
     
     /**
-     * Identifies the preferred currency of the requestor.
+     * This attribute indicates the currency the caller requests to have used in all returned monetary values (when a choice is possible).
      *
      * @param string $PreferredCurrency
      * return RequestedShipment
@@ -136,7 +136,7 @@ class RequestedShipment
     }
     
     /**
-     * Physical starting address for the shipment, if different from Shipper Address.
+     * Physical starting address for the shipment, if different from shipper's address.
      *
      * @param ContactAndAddress $Origin
      * return RequestedShipment
@@ -184,6 +184,18 @@ class RequestedShipment
     }
     
     /**
+     * Data applicable to shipments using FEDEX_FREIGHT and FEDEX_NATIONAL_FREIGHT services.
+     *
+     * @param FreightShipmentDetail $FreightShipmentDetail
+     * return RequestedShipment
+     */
+    public function setFreightShipmentDetail(FreightShipmentDetail $freightShipmentDetail)
+    {
+        $this->FreightShipmentDetail = $freightShipmentDetail;
+        return $this;
+    }
+    
+    /**
      * Used with Ground Home Delivery and Freight.
      *
      * @param string $DeliveryInstructions
@@ -208,19 +220,19 @@ class RequestedShipment
     }
     
     /**
-     * Information about this package that only applies to an international (export) shipment.
+     * Customs clearance data, used for both international and intra-country shipping.
      *
-     * @param InternationalDetail $InternationalDetail
+     * @param CustomsClearanceDetail $CustomsClearanceDetail
      * return RequestedShipment
      */
-    public function setInternationalDetail(InternationalDetail $internationalDetail)
+    public function setCustomsClearanceDetail(CustomsClearanceDetail $customsClearanceDetail)
     {
-        $this->InternationalDetail = $internationalDetail;
+        $this->CustomsClearanceDetail = $customsClearanceDetail;
         return $this;
     }
     
     /**
-     * 
+     * For use in "process tag" transaction.
      *
      * @param PickupDetail $PickupDetail
      * return RequestedShipment
@@ -280,7 +292,7 @@ class RequestedShipment
     }
     
     /**
-     * Details such as shipping document types, NAFTA information, CI information, and GAA information.
+     * Contains data used to create additional (non-label) shipping documents.
      *
      * @param ShippingDocumentSpecification $ShippingDocumentSpecification
      * return RequestedShipment
@@ -292,7 +304,7 @@ class RequestedShipment
     }
     
     /**
-     * Indicates the type of rates to be returned.
+     * Specifies whether and what kind of rates the customer wishes to have quoted on this shipment. The reply will also be constrained by other data on the shipment and customer.
      *
      * @param array[RateRequestType] $RateRequestTypes
      * return RequestedShipment
@@ -316,7 +328,7 @@ class RequestedShipment
     }
     
     /**
-     * Used when requesting child pieces in a multiple piece shipment. The master tracking information will be returned in reply from the first package requested for a multiple piece shipment. That master tracking information is then inserted into the requests for each additional package requested for that multiple pice shipment.
+     * Only used with multiple-transaction shipments.
      *
      * @param TrackingId $MasterTrackingId
      * return RequestedShipment
@@ -340,7 +352,7 @@ class RequestedShipment
     }
     
     /**
-     * For a multiple piece shipment this is the total number of packages in the shipment.
+     * The total number of packages in the entire shipment (even when the shipment spans multiple transactions.)
      *
      * @param nonNegativeInteger $PackageCount
      * return RequestedShipment
@@ -348,18 +360,6 @@ class RequestedShipment
     public function setPackageCount($packageCount)
     {
         $this->PackageCount = $packageCount;
-        return $this;
-    }
-    
-    /**
-     * Specifies whether packages are described individually,in groups, or summarized in a single description for total-piece-total-weight. This field controls which fields of the RequestedPackageLineItem will be used, and how many occurrences are expected.
-     *
-     * @param RequestedPackageDetailType $PackageDetail
-     * return RequestedShipment
-     */
-    public function setPackageDetail(\FedEx\ShipService\SimpleType\RequestedPackageDetailType $packageDetail)
-    {
-        $this->PackageDetail = $packageDetail;
         return $this;
     }
     

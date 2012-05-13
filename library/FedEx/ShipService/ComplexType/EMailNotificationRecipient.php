@@ -16,7 +16,7 @@ class EMailNotificationRecipient
     protected $_name = 'EMailNotificationRecipient';
 
     /**
-     * Identifies the email notification recipient type. See EMailNotificationRecipientType for a list of valid enumerated values.
+     * Identifies the relationship this email recipient has to the shipment.
      *
      * @param EMailNotificationRecipientType $EMailNotificationRecipientType
      * return EMailNotificationRecipient
@@ -28,7 +28,7 @@ class EMailNotificationRecipient
     }
     
     /**
-     * Identifies the email address of the notification recipient.
+     * The email address to send the notification to
      *
      * @param string $EMailAddress
      * return EMailNotificationRecipient
@@ -40,43 +40,19 @@ class EMailNotificationRecipient
     }
     
     /**
-     * Identifies if an email notification should be sent to the recipient when the package is shipped.
+     * The types of email notifications being requested for this recipient.
      *
-     * @param boolean $NotifyOnShipment
+     * @param array[EMailNotificationEventType] $NotificationEventsRequested
      * return EMailNotificationRecipient
      */
-    public function setNotifyOnShipment($notifyOnShipment)
+    public function setNotificationEventsRequested(array $notificationEventsRequested)
     {
-        $this->NotifyOnShipment = $notifyOnShipment;
+        $this->NotificationEventsRequested = $notificationEventsRequested;
         return $this;
     }
     
     /**
-     * Identifies if an email notification should be sent to the recipient when an exception occurs during package movement from origin to destination.
-     *
-     * @param boolean $NotifyOnException
-     * return EMailNotificationRecipient
-     */
-    public function setNotifyOnException($notifyOnException)
-    {
-        $this->NotifyOnException = $notifyOnException;
-        return $this;
-    }
-    
-    /**
-     * Identifies if an email notification should be sent to the recipient when the package is delivered.
-     *
-     * @param boolean $NotifyOnDelivery
-     * return EMailNotificationRecipient
-     */
-    public function setNotifyOnDelivery($notifyOnDelivery)
-    {
-        $this->NotifyOnDelivery = $notifyOnDelivery;
-        return $this;
-    }
-    
-    /**
-     * A unique format can be specified for each email address indicated. The format will apply to notification emails sent to a particular email address..
+     * The format of the email notification.
      *
      * @param EMailNotificationFormatType $Format
      * return EMailNotificationRecipient
@@ -88,7 +64,7 @@ class EMailNotificationRecipient
     }
     
     /**
-     * Indicates the language the notification is expressed in.
+     * The language/locale to be used in this email notification.
      *
      * @param Localization $Localization
      * return EMailNotificationRecipient

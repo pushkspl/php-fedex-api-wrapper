@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * 
+ * Constructed string, based on format and zero or more data fields, printed in specified printer font (for thermal labels) or generic font/size (for plain paper labels).
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -40,6 +40,18 @@ class CustomLabelTextEntry
     }
     
     /**
+     * 
+     *
+     * @param array[string] $DataFields
+     * return CustomLabelTextEntry
+     */
+    public function setDataFields(array $dataFields)
+    {
+        $this->DataFields = $dataFields;
+        return $this;
+    }
+    
+    /**
      * Printer-specific font name for use with thermal printer labels.
      *
      * @param string $ThermalFontId
@@ -48,6 +60,30 @@ class CustomLabelTextEntry
     public function setThermalFontId($thermalFontId)
     {
         $this->ThermalFontId = $thermalFontId;
+        return $this;
+    }
+    
+    /**
+     * Generic font name for use with plain paper labels.
+     *
+     * @param string $FontName
+     * return CustomLabelTextEntry
+     */
+    public function setFontName($fontName)
+    {
+        $this->FontName = $fontName;
+        return $this;
+    }
+    
+    /**
+     * Generic font size for use with plain paper labels.
+     *
+     * @param positiveInteger $FontSize
+     * return CustomLabelTextEntry
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->FontSize = $fontSize;
         return $this;
     }
     

@@ -2,7 +2,7 @@
 namespace FedEx\TrackService\ComplexType;
 
 /**
- * 
+ * Used to report the status of a piece of a multiple piece shipment which is no longer traveling with the rest of the packages in the shipment or has not been accounted for.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class TrackReconciliation
     protected $_name = 'TrackReconciliation';
 
     /**
-     * 
+     * An identifier for this type of status.
      *
      * @param string $Status
      * return TrackReconciliation
@@ -28,7 +28,7 @@ class TrackReconciliation
     }
     
     /**
-     * 
+     * A human-readable description of this status.
      *
      * @param string $Description
      * return TrackReconciliation

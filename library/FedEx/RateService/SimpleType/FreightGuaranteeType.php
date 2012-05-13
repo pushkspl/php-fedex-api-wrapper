@@ -15,5 +15,4 @@ class FreightGuaranteeType
 {
     const _GUARANTEED_DATE = 'GUARANTEED_DATE';
     const _GUARANTEED_MORNING = 'GUARANTEED_MORNING';
-    const _GUARANTEED_TIME = 'GUARANTEED_TIME';
 }

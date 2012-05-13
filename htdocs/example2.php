@@ -37,7 +37,7 @@ $rateRequest->setTransactionDetail(new ComplexType\TransactionDetail(array(
 //Version
 $rateRequest->setVersion(new ComplexType\VersionId(array(
     'ServiceId' => 'crs',
-    'Major' => 8,
+    'Major' => 10,
     'Intermediate' => 0,
     'Minor' => 0
 )));
@@ -91,7 +91,8 @@ $rateRequest->setRequestedShipment(new ComplexType\RequestedShipment(array(
                 'Width' => 10,
                 'Height' => 3,
                 'Units' => new SimpleType\LinearUnits(SimpleType\LinearUnits::_IN)
-            ))
+            )),
+            'GroupPackageCount' => 1
         )),
         new ComplexType\RequestedPackageLineItem(array(
             'Weight' => new ComplexType\Weight(array(
@@ -103,7 +104,8 @@ $rateRequest->setRequestedShipment(new ComplexType\RequestedShipment(array(
                 'Width' => 20,
                 'Height' => 10,
                 'Units' => new SimpleType\LinearUnits(SimpleType\LinearUnits::_IN)
-            ))
+            )),
+            'GroupPackageCount' => 1
         ))
     )
 )));
@@ -113,5 +115,4 @@ var_dump($rateRequest->toArray());
 echo "<hr />";
 
 $request = new RateService\Request();
-$request->setRateRequest($rateRequest);
-var_dump($request->getRates());
+var_dump($request->getRateReply($rateRequest));

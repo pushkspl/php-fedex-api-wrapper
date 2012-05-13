@@ -16,19 +16,31 @@ class CodDetail
     protected $_name = 'CodDetail';
 
     /**
-     * Identifies if freight charges are to be added to the COD amount. This element determines which freight charges should be added to the COD collect amount. See CodAddTransportationChargesType for the liist of valid enumerated values.
+     * 
      *
-     * @param CodAddTransportationChargesType $AddTransportationCharges
+     * @param Money $CodCollectionAmount
      * return CodDetail
      */
-    public function setAddTransportationCharges(\FedEx\RateService\SimpleType\CodAddTransportationChargesType $addTransportationCharges)
+    public function setCodCollectionAmount(Money $codCollectionAmount)
     {
-        $this->AddTransportationCharges = $addTransportationCharges;
+        $this->CodCollectionAmount = $codCollectionAmount;
         return $this;
     }
     
     /**
-     * Identifies the type of funds FedEx should collect upon package delivery. See CodCollectionType for the list of valid enumerated values.
+     * Specifies the details of the charges are to be added to the COD collect amount.
+     *
+     * @param CodAddTransportationChargesDetail $AddTransportationChargesDetail
+     * return CodDetail
+     */
+    public function setAddTransportationChargesDetail(CodAddTransportationChargesDetail $addTransportationChargesDetail)
+    {
+        $this->AddTransportationChargesDetail = $addTransportationChargesDetail;
+        return $this;
+    }
+    
+    /**
+     * Identifies the type of funds FedEx should collect upon package delivery
      *
      * @param CodCollectionType $CollectionType
      * return CodDetail
@@ -40,7 +52,7 @@ class CodDetail
     }
     
     /**
-     * Descriptive data about the recipient of the COD shipment.
+     * For Express this is the descriptive data that is used for the recipient of the FedEx Letter containing the COD payment. For Ground this is the descriptive data for the party to receive the payment that prints the COD receipt.
      *
      * @param Party $CodRecipient
      * return CodDetail

@@ -2,7 +2,7 @@
 namespace FedEx\RateService\ComplexType;
 
 /**
- * The descriptive data required for FedEx to provide email notification to the customer regarding the shipment.
+ * Information describing email notifications that will be sent in relation to events that occur during package movement
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class EMailNotificationDetail
     protected $_name = 'EMailNotificationDetail';
 
     /**
-     * Identifies the message text to be sent in the email notification.
+     * A message that will be included in the email notifications
      *
      * @param string $PersonalMessage
      * return EMailNotificationDetail
@@ -28,7 +28,7 @@ class EMailNotificationDetail
     }
     
     /**
-     * The descriptive data element for the collection of email recipients.
+     * Information describing the destination of the email, format of the email and events to be notified on
      *
      * @param array[EMailNotificationRecipient] $Recipients
      * return EMailNotificationDetail

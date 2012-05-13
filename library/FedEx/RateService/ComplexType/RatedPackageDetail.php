@@ -52,7 +52,7 @@ class RatedPackageDetail
     }
     
     /**
-     * Ground COD is package level.
+     * Ground COD is shipment level.
      *
      * @param Money $AdjustedCodCollectionAmount
      * return RatedPackageDetail

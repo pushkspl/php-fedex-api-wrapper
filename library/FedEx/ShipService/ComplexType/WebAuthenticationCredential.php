@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Two part authentication string used for the sender's identity.
+ * Two part authentication string used for the sender's identity
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class WebAuthenticationCredential
     protected $_name = 'WebAuthenticationCredential';
 
     /**
-     * Publicly known part of authentication key used for authentication. This value is provided by FedEx after registration.
+     * Identifying part of authentication credential. This value is provided by FedEx after registration
      *
      * @param string $Key
      * return WebAuthenticationCredential
@@ -28,7 +28,7 @@ class WebAuthenticationCredential
     }
     
     /**
-     * Secret part of authentication key used for authentication. This value is provided by FedEx after registration.
+     * Secret part of authentication key. This value is provided by FedEx after registration.
      *
      * @param string $Password
      * return WebAuthenticationCredential

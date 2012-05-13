@@ -2,7 +2,7 @@
 namespace FedEx\ShipService\ComplexType;
 
 /**
- * Package level rate information.
+ * This class groups together for a single package all package-level rate data (across all rate types) as part of the response to a shipping request, which groups shipment-level data together and groups package-level data by package.
  *
  * @version     $Revision$
  * @author      Jeremy Dunn (www.jsdunn.info)
@@ -16,7 +16,7 @@ class PackageRating
     protected $_name = 'PackageRating';
 
     /**
-     * Identifies which entry in the PackageRateDetails array is considered as presenting the actual rates for the package.
+     * This rate type identifies which entry in the following array is considered as presenting the "actual" rates for the package.
      *
      * @param ReturnedRateType $ActualRateType
      * return PackageRating
@@ -28,7 +28,7 @@ class PackageRating
     }
     
     /**
-     * The difference between account based rates and list rates. Only returned when list rates are requested.
+     * The "list" net charge minus "actual" net charge.
      *
      * @param Money $EffectiveNetDiscount
      * return PackageRating
