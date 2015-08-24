@@ -1,0 +1,1 @@
+<a href='https://github.com/JeremyDunn/php-fedex-api-wrapper'>This project is now maintained on github.</a>
